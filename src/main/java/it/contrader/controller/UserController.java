@@ -135,6 +135,9 @@ public class UserController implements Controller {
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
 				break;
+				
+			case "A":
+				MainDispatcher.getInstance().callView("Review", null);
 
 			case "B":
 				MainDispatcher.getInstance().callView("HomeAdmin", null);

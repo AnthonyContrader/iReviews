@@ -1,9 +1,9 @@
-package it.contrader.model;
+package it.contrader.dto;
 
-import it.contrader.model.*;
+import it.contrader.model.User;
 
-
-public class Review {//classe che implementa la recensione 
+public class ReviewDTO {
+	
 	private int id;//identificatore recensione
 	private User user;//identificatore utente che ha scritto recensione
 	private String negozio;//indica il negozio a cui si riferisce la recensione
@@ -14,12 +14,12 @@ public class Review {//classe che implementa la recensione
 	
 	
 	
-	public Review() {
+	public ReviewDTO() {
 		super();
 	}
 	
 	
-    public Review(String negozio, String testo, int voto) {
+    public ReviewDTO(String negozio, String testo, int voto) {
 		super();
 		this.negozio = negozio;
 		this.testo = testo;
@@ -27,7 +27,7 @@ public class Review {//classe che implementa la recensione
 	}
 
 
-    public Review(int id,User user, String negozio, String testo, int voto) {
+    public ReviewDTO(int id ,User user, String negozio, String testo, int voto) {
 		super();
 		this.id=id;
 		this.user = user;
@@ -92,13 +92,5 @@ public class Review {//classe che implementa la recensione
 		return "Review [id=" + id + ", user=" + user + ", negozio=" + negozio + ", testo=" + testo + ", voto=" + voto
 				+ "]";
 	}
-    
-    
-    
-	
-	
-	
-	
-	
 
 }
