@@ -10,21 +10,20 @@ import it.contrader.model.User;
 
 public class ReviewDAO {
 
-	private final String QUERY_ALL = "SELECT * FROM review";
+	private final String QUERY_ALL = "SELECT * FROM review WHERE utente=?";
 	private final String QUERY_CREATE = "INSERT INTO review (negozio, testo, voto) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM review WHERE id=?";
 	private final String QUERY_UPDATE = "UPDATE review SET negozio=?, testo=?, voto=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM review WHERE id=?";
 	
-	public final String identificatore_utente  = "SELECT id FROM user ";
-	System.//out.print(identificatore_utente);
+	
 	
 	
 	public ReviewDAO() {
 		
 	}
 	
-	public List<Review> getAll() {
+	public List<Review> getAll( ) {
 		List<Review> reviewList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
