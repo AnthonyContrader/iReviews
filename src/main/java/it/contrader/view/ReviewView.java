@@ -19,18 +19,10 @@ public class ReviewView  extends AbstractView{
 public void showOptions() {
 		
 		System.out.println("----- .:INSERISCI IL TESTO DELLA RECENSIONE:. ----");
-		
-		
 		this.testo=getInput();
-		
-		
+
         System.out.println("----- .:INSERISCI IL NOME DEL NEGOZIO :. ----");
-		
-		
 		this.negozio=getInput();
-		   
-		
-		
         System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE:. ----");
 		
 		
@@ -56,10 +48,10 @@ public void showResults(Request request) {
 public void submit() {
 
 	request = new Request();
-	request.put("testo", testo);
-	request.put("negozio", negozio);
-	request.put("voto", voto);
-	
+	request.put("testo", this.testo);
+	request.put("negozio", this.negozio);
+	request.put("voto", this.voto);
+	request.put("mode", "INSERT");
 	MainDispatcher.getInstance().callAction("Review", "doControl", request);
 	
 }

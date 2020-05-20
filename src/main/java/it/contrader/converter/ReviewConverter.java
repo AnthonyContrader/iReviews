@@ -10,12 +10,17 @@ public class ReviewConverter {
 	
 	
 	public ReviewDTO toDTO(Review review) {
-		ReviewDTO reviewDTO = new ReviewDTO(review.getId(), review.getUser(),review.getNegozio(), review.getTesto(), review.getVoto());
+		
+		
+		UserDTO user = new UserDTO();
+		user.setId(review.getUser());
+		ReviewDTO reviewDTO = new ReviewDTO(review.getId(),user,review.getNegozio(), review.getTesto(), review.getVoto());
 		return reviewDTO;
 	}
 
 	public Review toEntity(ReviewDTO reviewDTO) {
-		Review review = new Review(reviewDTO.getId(), reviewDTO.getUser(), reviewDTO.getNegozio(), reviewDTO.getTesto(), reviewDTO.getVoto());
+		System.out.println ("ECCOLOconverter");
+		Review review = new Review(reviewDTO.getId(), reviewDTO.getUser().getId(), reviewDTO.getNegozio(), reviewDTO.getTesto(), reviewDTO.getVoto());
 		return review;
 	}
 }

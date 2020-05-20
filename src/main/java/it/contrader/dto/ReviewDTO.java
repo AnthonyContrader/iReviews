@@ -5,7 +5,7 @@ import it.contrader.model.User;
 public class ReviewDTO {
 	
 	private int id;//identificatore recensione
-	private User user;//identificatore utente che ha scritto recensione
+	private UserDTO user;//identificatore utente che ha scritto recensione
 	private String negozio;//indica il negozio a cui si riferisce la recensione
 	private String testo;//testo della recensione
 	private int voto;//voto da 1 a 10
@@ -27,7 +27,7 @@ public class ReviewDTO {
 	}
 
 
-    public ReviewDTO(int id ,User user, String negozio, String testo, int voto) {
+    public ReviewDTO(int id ,UserDTO user, String negozio, String testo, int voto) {
 		super();
 		this.id=id;
 		this.user = user;
@@ -47,12 +47,12 @@ public class ReviewDTO {
 	}
 
 
-	public User getUser() {
+	public UserDTO getUser() {
 		return user;
 	}
 
 
-	public void setUser(User user) {
+	public void setUser(UserDTO user) {
 		this.user = user;
 	}
 

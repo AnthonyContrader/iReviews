@@ -1,11 +1,11 @@
 package it.contrader.model;
 
-import it.contrader.model.*;
+// import it.contrader.model.*;
 
 
 public class Review {//classe che implementa la recensione 
 	private int id;//identificatore recensione
-	private User user;//identificatore utente che ha scritto recensione
+	private int user;//identificatore utente che ha scritto recensione
 	private String negozio;//indica il negozio a cui si riferisce la recensione
 	private String testo;//testo della recensione
 	private int voto;//voto da 1 a 10
@@ -27,7 +27,7 @@ public class Review {//classe che implementa la recensione
 	}
 
 
-    public Review(int id,User user, String negozio, String testo, int voto) {
+    public Review(int id,int user, String negozio, String testo, int voto) {
 		super();
 		this.id=id;
 		this.user = user;
@@ -47,12 +47,12 @@ public class Review {//classe che implementa la recensione
 	}
 
 
-	public User getUser() {
+	public int getUser() {
 		return user;
 	}
 
 
-	public void setUser(User user) {
+	public void setUser(int user) {
 		this.user = user;
 	}
 

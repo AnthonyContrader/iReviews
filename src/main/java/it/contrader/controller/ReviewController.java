@@ -8,19 +8,20 @@ import it.contrader.service.ReviewService;
 
 public class ReviewController implements Controller {
 	
+	private static String sub_package = "review.";
 	private ReviewService reviewService;
-	private static String sub_package = "user.";
+	
 	
   public ReviewController() {
 		
-	reviewService= new ReviewService();
+	this.reviewService= new ReviewService();
 	}
 
 	@Override
 	public void doControl(Request request) {
 		
 		 int id;
-		  User user;
+		 UserDTO user = new UserDTO();
 		 String negozio;
 		 String testo;
 		 int voto;
@@ -30,14 +31,15 @@ public class ReviewController implements Controller {
 		 switch(mode) {
 		
 	case "INSERT":
-		id = (int) request.get("id");
-		user = (User) request.getString("user");
+		// id = (int) request.get("id");
+		// user = (UserDTO) request.getString("user");
 		negozio = request.get("negozio").toString();
 		testo = request.get("testo").toString();
 		voto = (int) request.get("voto");
 		
+		user.setId(1);
 		//costruisce l'oggetto user da inserire
-		ReviewDTO reviewtoinsert = new ReviewDTO(id, user, negozio,testo,voto);
+		ReviewDTO reviewtoinsert = new ReviewDTO(0, user, negozio,testo,voto);
 		//invoca il service
 		reviewService.insert(reviewtoinsert);
 		request = new Request();

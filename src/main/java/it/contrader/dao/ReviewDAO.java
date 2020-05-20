@@ -11,7 +11,7 @@ import it.contrader.model.User;
 public class ReviewDAO {
 
 	private final String QUERY_ALL = "SELECT * FROM review WHERE user=?";
-	private final String QUERY_CREATE = "INSERT INTO review (testo, negozio, voto) VALUES (?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO review (testo, negozio, voto, user_id) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM review WHERE id=?";
 	private final String QUERY_UPDATE = "UPDATE review SET  testo=?, negozio=?, voto=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM review WHERE id=?";
@@ -41,20 +41,24 @@ public class ReviewDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
 		}
 		return reviewList;
 	}
 	
 	public boolean insert(Review reviewToInsert) {
+		System.out.println ("ECCOLOdao");
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
+			preparedStatement.setInt(4, reviewToInsert.getUser());
 			preparedStatement.setString(1, reviewToInsert.getTesto());
 			preparedStatement.setString(2, reviewToInsert.getNegozio());
 			preparedStatement.setInt(3, reviewToInsert.getVoto());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
+			e.printStackTrace();
 			return false;
 		}
 
