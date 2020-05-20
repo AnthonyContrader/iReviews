@@ -1,10 +1,16 @@
-package it.contrader.view;
+package it.contrader.view.review;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
-import it.contrader.dto.ReviewDTO;
+import it.contrader.view.AbstractView;
 
-public class ReviewView  extends AbstractView{
+public class ReviewInsertView extends AbstractView {
+	
+private String testo;
+	
+	private String negozio;
+	
+	private int voto;
 	
 	private Request request;
 
@@ -15,12 +21,11 @@ public class ReviewView  extends AbstractView{
 	
 public void showOptions() {
 	
-		
+	
 		System.out.println("          Scegli l'operazione da effettuare:");
 		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
-		
+
 		this.choice = getInput();
-		
 		/*
 		System.out.println("----- .:INSERISCI IL TESTO DELLA RECENSIONE:. ----");
 		this.testo=getInput();
@@ -35,18 +40,28 @@ public void showOptions() {
 	}
 
 
-public void submit() {
-	System.out.print("submit");
-	request = new Request();
-	request.put("choice", choice);
-	request.put("mode", "GETCHOICE");
-	MainDispatcher.getInstance().callAction("Review", "doControl", this.request);
-}
 
 
 @Override
 public void showResults(Request request) {
-	// TODO Auto-generated method stub
+	
+	if(request!=null) {
+    	System.out.println("\n INSERISCI QUI LA TUA RECENSIONE: ");
+    	}
+}
+
+
+
+
+@Override
+public void submit() {
+
+	request = new Request();
+	request.put("testo", this.testo);
+	request.put("negozio", this.negozio);
+	request.put("voto", this.voto);
+	request.put("mode", "INSERT");
+	MainDispatcher.getInstance().callAction("Review", "doControl", request);
 	
 }
 }

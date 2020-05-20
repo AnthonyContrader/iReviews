@@ -10,7 +10,7 @@ public class ReviewController implements Controller {
 	
 	private static String sub_package = "review.";
 	private ReviewService reviewService;
-	
+	private String choice;
 	
   public ReviewController() {
 		
@@ -27,7 +27,7 @@ public class ReviewController implements Controller {
 		 int voto;
 		 
 		 String mode = (String) request.get("mode");
-		 
+		 String choice = (String) request.get("choice");
 		 switch(mode) {
 		
 	case "INSERT":
@@ -47,6 +47,43 @@ public class ReviewController implements Controller {
 		//Rimanda alla view con la risposta
 		MainDispatcher.getInstance().callView(sub_package + "ReviewInsert", request);
 		break;
+		
+	case "GETCHOICE":
+		
+			
+			//toUpperCase() mette in maiuscolo la scelta
+		switch (choice.toUpperCase()) {
+
+		case "L":
+			MainDispatcher.getInstance().callView(sub_package + "ReviewRead", null);
+			break;
+	
+		case "I":
+			MainDispatcher.getInstance().callView(sub_package + "ReviewInsert", null);
+			System.out.println("case i");
+			break;
+	
+		case "M":
+			MainDispatcher.getInstance().callView(sub_package + "ReviewUpdate", null);
+			break;
+	
+		case "C":
+			MainDispatcher.getInstance().callView(sub_package + "ReviewDelete", null);
+			break;
+	
+		case "E":
+			MainDispatcher.getInstance().callView("Login", null);
+			break;
+	
+	
+		case "B":
+			MainDispatcher.getInstance().callView("HomeAdmin", null);
+		break;
+	
+		default:
+			MainDispatcher.getInstance().callView("Login", null);
+		}
+
 		 }
 		
 	}
