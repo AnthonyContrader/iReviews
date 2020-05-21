@@ -16,7 +16,7 @@ public class ReviewService {
 	}
 
 	public boolean insert(ReviewDTO dto) {
-		System.out.println ("ECCOLOservice");
+		
 		// Converte un DTO in entità e lo passa al DAO per l'inserimento
 		return reviewDao.insert(reviewConverter.toEntity(dto));
 	}

@@ -22,11 +22,12 @@ private String testo;
 public void showOptions() {
 	
 	
-		System.out.println("          Scegli l'operazione da effettuare:");
+		/*System.out.println("          Scegli l'operazione da effettuare:");
 		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
+		System.out.println("         vista della review insert view!!!!!!:");*/
 
-		this.choice = getInput();
-		/*
+		//this.choice = getInput();
+		
 		System.out.println("----- .:INSERISCI IL TESTO DELLA RECENSIONE:. ----");
 		this.testo=getInput();
 
@@ -35,7 +36,7 @@ public void showOptions() {
         System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE:. ----");
 		
 		
-		this.voto= Integer.valueOf(getInput());*/
+		this.voto= Integer.valueOf(getInput());
 		
 	}
 
@@ -61,7 +62,7 @@ public void submit() {
 	request.put("negozio", this.negozio);
 	request.put("voto", this.voto);
 	request.put("mode", "INSERT");
-	MainDispatcher.getInstance().callAction("Review", "doControl", request);
+	MainDispatcher.getInstance().callAction("Review", "doControl",this.request);
 	
 }
 }

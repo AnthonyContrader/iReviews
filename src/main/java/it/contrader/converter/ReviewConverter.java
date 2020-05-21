@@ -19,7 +19,7 @@ public class ReviewConverter {
 	}
 
 	public Review toEntity(ReviewDTO reviewDTO) {
-		System.out.println ("ECCOLOconverter");
+		
 		Review review = new Review(reviewDTO.getId(), reviewDTO.getUser().getId(), reviewDTO.getNegozio(), reviewDTO.getTesto(), reviewDTO.getVoto());
 		return review;
 	}

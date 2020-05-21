@@ -36,7 +36,7 @@ public void showOptions() {
 
 
 public void submit() {
-	System.out.print("submit");
+	//System.out.print("submit");
 	request = new Request();
 	request.put("choice", choice);
 	request.put("mode", "GETCHOICE");

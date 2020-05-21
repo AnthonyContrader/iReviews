@@ -27,7 +27,7 @@ public class ReviewController implements Controller {
 		 int voto;
 		 
 		 String mode = (String) request.get("mode");
-		 String choice = (String) request.get("choice");
+		  choice = (String) request.get("choice");
 		 switch(mode) {
 		
 	case "INSERT":

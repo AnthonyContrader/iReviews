@@ -47,7 +47,7 @@ public class ReviewDAO {
 	}
 	
 	public boolean insert(Review reviewToInsert) {
-		System.out.println ("ECCOLOdao");
+		
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
