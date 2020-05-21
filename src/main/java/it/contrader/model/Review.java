@@ -5,7 +5,7 @@ package it.contrader.model;
 
 public class Review {//classe che implementa la recensione 
 	private int id;//identificatore recensione
-	private int user;//identificatore utente che ha scritto recensione
+	private int user_id;//identificatore utente che ha scritto recensione
 	private String negozio;//indica il negozio a cui si riferisce la recensione
 	private String testo;//testo della recensione
 	private int voto;//voto da 1 a 10
@@ -19,18 +19,19 @@ public class Review {//classe che implementa la recensione
 	}
 	
 	
-    public Review(String negozio, String testo, int voto) {
+    public Review(int user_id,String negozio, String testo, int voto) {
 		super();
+		this.user_id=user_id;
 		this.negozio = negozio;
 		this.testo = testo;
 		this.voto = voto;
 	}
 
 
-    public Review(int id,int user, String negozio, String testo, int voto) {
+    public Review(int id,int user_id, String negozio, String testo, int voto) {
 		super();
 		this.id=id;
-		this.user = user;
+		this.user_id = user_id;
 		this.negozio = negozio;
 		this.testo = testo;
 		this.voto = voto;
@@ -47,13 +48,13 @@ public class Review {//classe che implementa la recensione
 	}
 
 
-	public int getUser() {
-		return user;
+	public int getUser_id() {
+		return user_id;
 	}
 
 
-	public void setUser(int user) {
-		this.user = user;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 
@@ -89,7 +90,7 @@ public class Review {//classe che implementa la recensione
 
 	@Override
 	public String toString() {
-		return "Review [id=" + id + ", user=" + user + ", negozio=" + negozio + ", testo=" + testo + ", voto=" + voto
+		return "Review [id=" + id + ", user=" + user_id + ", negozio=" + negozio + ", testo=" + testo + ", voto=" + voto
 				+ "]";
 	}
     

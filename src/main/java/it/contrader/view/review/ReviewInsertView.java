@@ -11,6 +11,7 @@ private String testo;
 	private String negozio;
 	
 	private int voto;
+	private int user_id;
 	
 	private Request request;
 
@@ -22,11 +23,8 @@ private String testo;
 public void showOptions() {
 	
 	
-		/*System.out.println("          Scegli l'operazione da effettuare:");
-		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
-		System.out.println("         vista della review insert view!!!!!!:");*/
-
-		//this.choice = getInput();
+		System.out.println("----- .:INSERISCI IL TUO USER_ID:. ----");
+		this.user_id=Integer.valueOf(getInput());
 		
 		System.out.println("----- .:INSERISCI IL TESTO DELLA RECENSIONE:. ----");
 		this.testo=getInput();
@@ -58,6 +56,7 @@ public void showResults(Request request) {
 public void submit() {
 
 	request = new Request();
+	request.put("user_id", this.user_id);
 	request.put("testo", this.testo);
 	request.put("negozio", this.negozio);
 	request.put("voto", this.voto);

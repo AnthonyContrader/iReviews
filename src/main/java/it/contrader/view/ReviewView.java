@@ -1,8 +1,11 @@
 package it.contrader.view;
 
+import java.util.List;
+
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 import it.contrader.dto.ReviewDTO;
+import it.contrader.dto.UserDTO;
 
 public class ReviewView  extends AbstractView{
 	
@@ -35,18 +38,34 @@ public void showOptions() {
 	}
 
 
-public void submit() {
-	//System.out.print("submit");
-	request = new Request();
-	request.put("choice", choice);
-	request.put("mode", "GETCHOICE");
-	MainDispatcher.getInstance().callAction("Review", "doControl", this.request);
-}
+  
 
 
-@Override
-public void showResults(Request request) {
-	// TODO Auto-generated method stub
-	
-}
+  @Override
+  public void showResults(Request request) {
+	  if (request != null) {
+			System.out.println("\n------------------- Gestione Recensioni ----------------\n");
+			System.out.println("ID\tTesto\tNegozio\tVoto");
+			System.out.println("----------------------------------------------------\n");
+			
+			@SuppressWarnings("unchecked")
+			List<ReviewDTO> review = (List<ReviewDTO>) request.get("review");
+			for (ReviewDTO r: review)
+				System.out.println(r);
+			System.out.println();
+		}
+		
+
+  }
+  
+ 
+  
+  
+  public void submit() {
+		//System.out.print("submit");
+		request = new Request();
+		request.put("choice", choice);
+		request.put("mode", "GETCHOICE");
+		MainDispatcher.getInstance().callAction("Review", "doControl", this.request);
+	  }
 }

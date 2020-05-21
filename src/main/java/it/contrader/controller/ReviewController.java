@@ -22,43 +22,46 @@ public class ReviewController implements Controller {
 	@Override
 	public void doControl(Request request) {
 		
-		 int id;
-		 UserDTO user = new UserDTO();
+		 int reviewid;
+		 int user_id ;
 		 String negozio;
 		 String testo;
 		 int voto;
 		 
+		 
 		 String mode = (String) request.get("mode");
 		  choice = (String) request.get("choice");
+		  
 		 switch(mode) {
 		 
-		 /*case "REVIEWLIST":
+		 case "REVIEWLIST":
+			 System.out.println("sono nella review");
 				List<ReviewDTO> reviewDTO = reviewService.getAll();
 				//Impacchetta la request con la lista degli user
 				request.put("review", reviewDTO);
 				MainDispatcher.getInstance().callView("Review", request);
-				break;*/
+				break;
 		
-	case "INSERT":
-		// id = (int) request.get("id");
-		// user = (UserDTO) request.getString("user");
-		negozio = request.get("negozio").toString();
-		testo = request.get("testo").toString();
-		voto = (int) request.get("voto");
+	     case "INSERT":
+		  // id = (int) request.get("id");
+		  user_id = (int) request.get("user_id");
+		 negozio = request.get("negozio").toString();
+		 testo = request.get("testo").toString();
+		 voto = (int) request.get("voto");
 		
-		user.setId(1);
-		//costruisce l'oggetto user da inserire
-		ReviewDTO reviewtoinsert = new ReviewDTO(0, user, negozio,testo,voto);
-		//invoca il service
-		reviewService.insert(reviewtoinsert);
-		request = new Request();
+		 //user.setId(1);
+		 //costruisce l'oggetto user da inserire
+		 ReviewDTO reviewtoinsert = new ReviewDTO(0, user_id, negozio,testo,voto);
+		 //invoca il service
+		 reviewService.insert(reviewtoinsert);
+		 request = new Request();
 		request.put("mode", "mode");
-		//Rimanda alla view con la risposta
-		MainDispatcher.getInstance().callView(sub_package + "ReviewInsert", request);
-		break;
+		 //Rimanda alla view con la risposta
+		 MainDispatcher.getInstance().callView(sub_package + "ReviewInsert", request);
+		 break;
 		
-	case "GETCHOICE":
-		
+	    case "GETCHOICE":
+	  	
 			
 			//toUpperCase() mette in maiuscolo la scelta
 		switch (choice.toUpperCase()) {

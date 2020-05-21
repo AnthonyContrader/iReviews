@@ -49,6 +49,7 @@ public class HomeAdminView extends AbstractView {
     	request = new Request();
         switch (choice) {
         case "u":
+        	
         	this.request.put("mode", "USERLIST");
         	MainDispatcher.getInstance().callAction("User", "doControl", request);
         	break;
@@ -58,7 +59,8 @@ public class HomeAdminView extends AbstractView {
         	break;
         	
         case "r": //Aggiunta per recensioni 1 step
-        	MainDispatcher.getInstance().callView("Review", null);
+        	this.request.put("mode", "REVIEWLIST");
+        	MainDispatcher.getInstance().callAction("Review","doControl", request);
         	break;        	
         default:
         	
