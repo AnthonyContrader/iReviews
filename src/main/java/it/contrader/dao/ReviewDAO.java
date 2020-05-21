@@ -12,7 +12,7 @@ public class ReviewDAO {
 
 	private final String QUERY_ALL = "SELECT * FROM review ";
 	private final String QUERY_CREATE = "INSERT INTO review ( testo, negozio, voto,user_id) VALUES (?,?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM review WHERE id=?";
+	private final String QUERY_READ = "SELECT * FROM review WHERE user_id=?";
 	private final String QUERY_UPDATE = "UPDATE review SET  testo=?, negozio=?, voto=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM review WHERE id=?";
 	
@@ -65,31 +65,29 @@ public class ReviewDAO {
 
 	}
 	
-	public Review read(int reviewId) {
+	public List<Review> read(int user_id) {
+		List<Review> reviewlist = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
-
-
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, reviewId);
+			preparedStatement.setInt(1, user_id);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			resultSet.next();
-			String testo, negozio;
-			int voto;
-			int user_id;
+			Review review;
 			
-			 user_id=resultSet.getInt("user_id");
-			testo = resultSet.getString("testo");
-			negozio = resultSet.getString("negozio");
-			voto = resultSet.getInt("voto");
-			Review review = new Review(user_id,testo, negozio, voto);
-			review.setId(resultSet.getInt("reviewid"));
-
-			return review;
+			while (resultSet.next()) {
+			
+				int id = resultSet.getInt("id");
+				String negozio = resultSet.getString("negozio");
+				String testo = resultSet.getString("testo");
+				int voto = resultSet.getInt("voto");
+				review = new Review(user_id, negozio, testo, voto);
+				reviewlist.add(review);
+			}
+			
 		} catch (SQLException e) {
-			return null;
+			e.printStackTrace();
 		}
-
+		return reviewlist;
 	}
 	
 
