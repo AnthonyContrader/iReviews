@@ -1,5 +1,7 @@
 package it.contrader.controller;
 
+import java.util.List;
+
 import it.contrader.dto.ReviewDTO;
 import it.contrader.dto.UserDTO;
 import it.contrader.main.MainDispatcher;
@@ -29,6 +31,13 @@ public class ReviewController implements Controller {
 		 String mode = (String) request.get("mode");
 		  choice = (String) request.get("choice");
 		 switch(mode) {
+		 
+		 /*case "REVIEWLIST":
+				List<ReviewDTO> reviewDTO = reviewService.getAll();
+				//Impacchetta la request con la lista degli user
+				request.put("review", reviewDTO);
+				MainDispatcher.getInstance().callView("Review", request);
+				break;*/
 		
 	case "INSERT":
 		// id = (int) request.get("id");
