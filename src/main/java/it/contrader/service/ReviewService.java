@@ -27,6 +27,11 @@ public class ReviewService {
 		
 		
 	}
+
+	public boolean delete(int id) {		
+		return reviewDAO.delete(id);	
+		
+	}
 	
 	public List<ReviewDTO> read(int user_id) {
 		List<Review> review = this.reviewDAO.read(user_id);

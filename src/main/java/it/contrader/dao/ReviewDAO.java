@@ -23,6 +23,23 @@ public class ReviewDAO {
 		
 	}
 	
+	public boolean delete(int id) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
+			preparedStatement.setInt(1, id);
+			preparedStatement.execute();
+			return true;			
+		}catch (SQLException e) {
+			e.printStackTrace();
+			
+		}
+		return false;
+		
+		
+	}
+	
 	public List<Review> getAll( ) {
 		List<Review> reviewList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();

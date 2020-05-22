@@ -37,10 +37,6 @@ public void showOptions() {
 		
 	}
 
-
-  
-
-
   @Override
   public void showResults(Request request) {
 	  if (request != null) {
@@ -58,9 +54,7 @@ public void showOptions() {
 
   }
   
- 
-  
-  
+   
   public void submit() {
 		//System.out.print("submit");
 		request = new Request();

@@ -50,7 +50,7 @@ public class ReviewController implements Controller {
 		 case "READ":
 			if (request != null) {
 				user_id = 0;
-				
+				System.out.println("tesr");
 				user_id = Integer.parseInt(request.get("choice").toString());
 				Request result = new Request();
 				List<ReviewDTO> reviewDTO1 = reviewService.read(user_id);
@@ -59,6 +59,17 @@ public class ReviewController implements Controller {
 			}
 			
 			break;
+			
+		 case "DELETE":
+				if (request != null) {
+					id = 0;	
+					System.out.println(request.get("choice").toString());	
+					id = Integer.parseInt(request.get("id").toString());
+				    reviewService.delete(id);
+					MainDispatcher.getInstance().callView(sub_package + "ReviewDelete", request);
+				}
+				
+				break;
 	     
 		
 		 case "INSERT":
