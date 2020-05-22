@@ -46,4 +46,8 @@ public class ReviewService {
 		// Ottiene una lista di entità e le restituisce convertendole in DTO
 		return reviewConverter.toDTOList(reviewDAO.getAll());
 	}
+	
+	public boolean update (ReviewDTO reviewDTO) {
+		return reviewDAO.update(reviewConverter.toEntity(reviewDTO));
+	}
 }

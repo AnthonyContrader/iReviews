@@ -13,7 +13,7 @@ public class ReviewDAO {
 	private final String QUERY_ALL = "SELECT * FROM review ";
 	private final String QUERY_CREATE = "INSERT INTO review ( testo, negozio, voto,user_id) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM review WHERE user_id=?";
-	private final String QUERY_UPDATE = "UPDATE review SET  testo=?, negozio=?, voto=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE review SET  user_id=?, testo=?, negozio=?, voto=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM review WHERE id=?";
 	
 	
@@ -107,6 +107,31 @@ public class ReviewDAO {
 		return reviewlist;
 	}
 	
+	
+	public boolean update(Review review) {
+		Connection connection = ConnectionSingleton.getInstance();
+		
+		if (review.getId() == 0) {
+			return false;
+		}
+		
+		try {
+			PreparedStatement statement = connection.prepareStatement(QUERY_UPDATE);
+			statement.setInt(1,review.getUser_id());
+			statement.setString(2,review.getTesto());
+			statement.setString(3,review.getNegozio() );
+			statement.setInt(4,review.getVoto());
+			statement.setInt(5, review.getId());
+			int a = statement.executeUpdate();
+			if (a > 0)
+				return true;
+			else
+				return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 
 }

@@ -89,6 +89,21 @@ public class ReviewController implements Controller {
 		 //Rimanda alla view con la risposta
 		 MainDispatcher.getInstance().callView(sub_package + "ReviewInsert", request);
 		 break;
+		 
+		 
+		 case "UPDATE":
+				id = Integer.parseInt(request.get("id").toString());
+				user_id = Integer.parseInt(request.get("user_id").toString());
+				negozio = request.get("negozio").toString();
+				testo = request.get("testo").toString();
+				voto = Integer.parseInt(request.get("voto").toString());
+				ReviewDTO reviewDto = new ReviewDTO(user_id, negozio, testo, voto);
+					reviewDto.setId(id);
+					reviewService.update(reviewDto);
+					request = new Request();
+					request.put("mode", "mode");
+					MainDispatcher.getInstance().callView(sub_package + "UserUpdate", request);
+					break;
 		
 	    case "GETCHOICE":
 	  	
