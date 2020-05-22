@@ -102,7 +102,7 @@ public class ReviewController implements Controller {
 					reviewService.update(reviewDto);
 					request = new Request();
 					request.put("mode", "mode");
-					MainDispatcher.getInstance().callView(sub_package + "UserUpdate", request);
+					MainDispatcher.getInstance().callView(sub_package + "ReviewUpdate", request);
 					break;
 		
 	    case "GETCHOICE":

@@ -12,12 +12,15 @@ public class ReviewUpdateView extends AbstractView {
 	private String testo;
 	private int voto;
 	private final String mode = "UPDATE";
+	private Request request;
+	
+	
 
 	@Override
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("Riview", null);
+			MainDispatcher.getInstance().callView("Review", null);
 		}
 		
 	}
@@ -39,7 +42,7 @@ public class ReviewUpdateView extends AbstractView {
 
 	@Override
 	public void submit() {
-		Request request = new Request();
+	     request = new Request();
 		request.put("id", id);
 		request.put("user_id", user_id);
 		request.put("negozio", negozio);
@@ -48,6 +51,7 @@ public class ReviewUpdateView extends AbstractView {
 		request.put("mode", mode);
 		request.put("choice", "");
 		MainDispatcher.getInstance().callAction("Review", "doControl", request);
+		System.out.println("sono nel submit");
 		
 	}
 
