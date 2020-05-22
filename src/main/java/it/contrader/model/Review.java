@@ -11,9 +11,6 @@ public class Review {//classe che implementa la recensione
 	private int voto;//voto da 1 a 10
 	
 
-	
-	
-	
 	public Review() {
 		super();
 	}
@@ -95,11 +92,4 @@ public class Review {//classe che implementa la recensione
 	}
     
     
-    
-	
-	
-	
-	
-	
-
 }

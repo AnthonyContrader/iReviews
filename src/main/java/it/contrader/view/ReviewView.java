@@ -22,14 +22,15 @@ public void showOptions() {
   public void showResults(Request request) {
 	 
 	  if (request != null) {
-			System.out.println("\n------------------- Gestione Recensioni ----------------\n");
-			System.out.println("ID\tTesto\tNegozio\tVoto");
-			System.out.println("----------------------------------------------------\n");
+			System.out.println("\n----------------------------- Gestione Recensioni ----------------------------\n");
+			System.out.println("ID\tUser_id\t\tNegozio\t\tTesto\t\tVoto");
+			System.out.println("------------------------------------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
 			List<ReviewDTO> review = (List<ReviewDTO>) request.get("review");
 			for (ReviewDTO r: review)
 			System.out.println(r);
+			System.out.println();
 	  }
 		
   }

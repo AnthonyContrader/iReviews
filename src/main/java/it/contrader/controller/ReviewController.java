@@ -35,7 +35,6 @@ public class ReviewController implements Controller {
 		 switch(mode) {
 		 
 			case "REVIEWLIST":
-				  System.out.println("sono nella review");
 				  List<ReviewDTO> reviewDTO = reviewService.getAll();
 				  
 				  // Impacchetta la request con la lista degli user
