@@ -83,12 +83,14 @@ public class ReviewDAO {
 	}
 	
 	public List<Review> read(int user_id) {
+		
 		List<Review> reviewlist = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
 			preparedStatement.setInt(1, user_id);
 			ResultSet resultSet = preparedStatement.executeQuery();
+			
 			Review review;
 			
 			while (resultSet.next()) {
@@ -97,7 +99,9 @@ public class ReviewDAO {
 				String negozio = resultSet.getString("negozio");
 				String testo = resultSet.getString("testo");
 				int voto = resultSet.getInt("voto");
+				
 				review = new Review(user_id, negozio, testo, voto);
+				review.setId(id);
 				reviewlist.add(review);
 			}
 			

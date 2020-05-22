@@ -27,16 +27,22 @@ public class ReviewUpdateView extends AbstractView {
 
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci l'id dal quale vuoi la modifica");
+		System.out.println("Inserisci l'id della recensione da modificare");
 		id = Integer.parseInt(getInput());
-		System.out.println("Inserisci user_id");
+		System.out.println("Inserisci user_id del nuovo proprietario");
 		user_id = Integer.parseInt(getInput());
-		System.out.println("inserisci il negozio");
+		System.out.println("inserisci il nome negozio");
 		negozio = getInput();
-		System.out.println("Inserisci il testo");
+		System.out.println("Inserisci il testo della recensione");
 		testo = getInput();
-		System.out.println("Inserisci il voto");
+		System.out.println("Inserisci il voto della recensione(DA 0 A 10)");
 		voto = Integer.parseInt(getInput());
+		
+		if(voto<0 || voto >10 ) {
+			System.out.println("ERRORE IL VOTO DEVE ESSERE COMPRESO FRA 0 E 10");
+			
+			MainDispatcher.getInstance().callView( "Review", request);
+		}
 		
 	}
 
@@ -51,7 +57,7 @@ public class ReviewUpdateView extends AbstractView {
 		request.put("mode", mode);
 		request.put("choice", "");
 		MainDispatcher.getInstance().callAction("Review", "doControl", request);
-		System.out.println("sono nel submit");
+
 		
 	}
 

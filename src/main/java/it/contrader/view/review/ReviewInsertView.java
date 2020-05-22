@@ -31,10 +31,16 @@ public void showOptions() {
 
         System.out.println("----- .:INSERISCI IL NOME DEL NEGOZIO :. ----");
 		this.negozio=getInput();
-        System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE:. ----");
+        System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE(DA 0 A 10):. ----");
 		
 		
 		this.voto= Integer.valueOf(getInput());
+		if(voto<0 || voto >10 ) {
+			System.out.println("ERRORE IL VOTO DEVE ESSERE COMPRESO FRA 0 E 10");
+			
+			MainDispatcher.getInstance().callView( "Review", request);
+		}
+		
 		
 	}
 
