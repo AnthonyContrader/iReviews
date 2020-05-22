@@ -39,16 +39,15 @@ public class ReviewUpdateView extends AbstractView {
 		voto = Integer.parseInt(getInput());
 		
 		if(voto<0 || voto >10 ) {
-			System.out.println("ERRORE IL VOTO DEVE ESSERE COMPRESO FRA 0 E 10");
-			
-			MainDispatcher.getInstance().callView( "Review", request);
+		System.out.println("ERRORE IL VOTO DEVE ESSERE COMPRESO FRA 0 E 10");
+		MainDispatcher.getInstance().callView( "Review", request);
 		}
 		
 	}
 
 	@Override
 	public void submit() {
-	     request = new Request();
+	    request = new Request();
 		request.put("id", id);
 		request.put("user_id", user_id);
 		request.put("negozio", negozio);
@@ -57,7 +56,6 @@ public class ReviewUpdateView extends AbstractView {
 		request.put("mode", mode);
 		request.put("choice", "");
 		MainDispatcher.getInstance().callAction("Review", "doControl", request);
-
 		
 	}
 

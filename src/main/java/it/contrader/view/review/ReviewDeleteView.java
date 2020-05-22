@@ -1,7 +1,6 @@
 package it.contrader.view.review;
 
 import it.contrader.controller.Request;
-import it.contrader.controller.ReviewController;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.AbstractView;
 
@@ -10,12 +9,13 @@ public class ReviewDeleteView extends AbstractView{
 	private Integer id;
 	private final String mode = "DELETE";
 	private Request request;
-	private ReviewController controller =new ReviewController();
 
 	@Override
 	public void showResults(Request request) {
-		// TODO Auto-generated method stub
-		
+		if (request!=null) {
+			System.out.println("La Rieview indicata è stata eliminata correttamente\n");
+			MainDispatcher.getInstance().callView("Review", null);
+		}	
 	}
 
 	@Override
@@ -27,7 +27,6 @@ public class ReviewDeleteView extends AbstractView{
 
 	@Override
 	public void submit() {
-		// TODO Auto-generated method stub
 		request = new Request();
 		request.put("id", id);	
 		request.put("mode", mode);

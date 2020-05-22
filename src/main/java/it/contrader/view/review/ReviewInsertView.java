@@ -8,39 +8,21 @@ public class ReviewInsertView extends AbstractView {
 	
 private String testo;
 	
-	private String negozio;
-	
+	private String negozio;	
 	private int voto;
-	private int user_id;
-	
-	private Request request;
-
-	private String choice;
-	
-	
-	
+	private int user_id;	
+	private Request request;			
 	
 public void showOptions() {
-	
-	
-		System.out.println("----- .:INSERISCI IL TUO USER_ID:. ----");
-		this.user_id=Integer.valueOf(getInput());
 		
+		System.out.println("----- .:INSERISCI IL TUO USER_ID:. ----");
+		this.user_id=Integer.valueOf(getInput());		
 		System.out.println("----- .:INSERISCI IL TESTO DELLA RECENSIONE:. ----");
 		this.testo=getInput();
-
         System.out.println("----- .:INSERISCI IL NOME DEL NEGOZIO :. ----");
-		this.negozio=getInput();
-        System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE(DA 0 A 10):. ----");
-		
-		
+		this.negozio=getInput();        
+		System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE:. ----");
 		this.voto= Integer.valueOf(getInput());
-		if(voto<0 || voto >10 ) {
-			System.out.println("ERRORE IL VOTO DEVE ESSERE COMPRESO FRA 0 E 10");
-			
-			MainDispatcher.getInstance().callView( "Review", request);
-		}
-		
 		
 	}
 
@@ -52,7 +34,7 @@ public void showResults(Request request) {
 	
 	if(request!=null) {
     	System.out.println("\n INSERISCI QUI LA TUA RECENSIONE: ");
-    	}
+    }
 }
 
 
@@ -69,5 +51,5 @@ public void submit() {
 	request.put("mode", "INSERT");
 	MainDispatcher.getInstance().callAction("Review", "doControl",this.request);
 	
-}
+	}
 }

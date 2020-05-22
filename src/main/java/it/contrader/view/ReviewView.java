@@ -1,44 +1,26 @@
 package it.contrader.view;
 
 import java.util.List;
-
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 import it.contrader.dto.ReviewDTO;
-import it.contrader.dto.UserDTO;
 
 public class ReviewView  extends AbstractView{
 	
 	private Request request;
-
 	private String choice;
-	
-	
-	
-	
+		
 public void showOptions() {
-	
-		
+			
 		System.out.println("          Scegli l'operazione da effettuare:");
-		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
-		
+		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");		
 		this.choice = getInput();
-		
-		/*
-		System.out.println("----- .:INSERISCI IL TESTO DELLA RECENSIONE:. ----");
-		this.testo=getInput();
-
-        System.out.println("----- .:INSERISCI IL NOME DEL NEGOZIO :. ----");
-		this.negozio=getInput();
-        System.out.println("----- .:INSERISCI IL VOTO DELLA RECENSIONE:. ----");
-		
-		
-		this.voto= Integer.valueOf(getInput());*/
 		
 	}
 
   @Override
   public void showResults(Request request) {
+	 
 	  if (request != null) {
 			System.out.println("\n------------------- Gestione Recensioni ----------------\n");
 			System.out.println("ID\tTesto\tNegozio\tVoto");
@@ -47,19 +29,18 @@ public void showOptions() {
 			@SuppressWarnings("unchecked")
 			List<ReviewDTO> review = (List<ReviewDTO>) request.get("review");
 			for (ReviewDTO r: review)
-				System.out.println(r);
-			System.out.println();
-		}
+			System.out.println(r);
+	  }
 		
-
   }
   
    
   public void submit() {
-		//System.out.print("submit");
+	  
 		request = new Request();
 		request.put("choice", choice);
 		request.put("mode", "GETCHOICE");
 		MainDispatcher.getInstance().callAction("Review", "doControl", this.request);
+		
 	  }
 }

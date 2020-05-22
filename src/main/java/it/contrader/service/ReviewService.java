@@ -1,7 +1,5 @@
 package it.contrader.service;
 
-import it.contrader.dto.UserDTO;
-
 import java.util.ArrayList;
 import java.util.List;
 import it.contrader.converter.ReviewConverter;
@@ -43,11 +41,15 @@ public class ReviewService {
 	}
 	
 	public List<ReviewDTO> getAll() {
+		
 		// Ottiene una lista di entità e le restituisce convertendole in DTO
 		return reviewConverter.toDTOList(reviewDAO.getAll());
+		
 	}
 	
 	public boolean update (ReviewDTO reviewDTO) {
+		
 		return reviewDAO.update(reviewConverter.toEntity(reviewDTO));
+		
 	}
 }

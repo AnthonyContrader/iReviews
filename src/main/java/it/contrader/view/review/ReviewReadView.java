@@ -9,23 +9,20 @@ import it.contrader.view.AbstractView;
 import it.contrader.controller.ReviewController;
 
 public class ReviewReadView extends AbstractView{
-	
-	
+		
 	private int user_id;
 	private Request request;
 	private final String mode = "READ";
 	private ReviewController controller =new ReviewController();
 
 	public ReviewReadView() {
+		
 	}
-
 
 	@Override
 	public void showResults(Request request) {
 	
-		}
-
-
+	}
 	
 	@Override
 	public void showOptions() {
@@ -38,11 +35,11 @@ public class ReviewReadView extends AbstractView{
 	}
 
 	/**
-	 * impacchetta una request con l'id dell'utente da leggere e la manda al controller tramite il Dispatcher
+	 * impacchetta una request con l'id dell'utente di cui vogliamo vedere le
+	 * recensioni e la manda al controller tramite il Dispatcher
 	 */
 	@Override
 	public void submit() {
-		
 		request = new Request();
 		request.put("user_id", user_id);
 		request.put("mode", mode);
