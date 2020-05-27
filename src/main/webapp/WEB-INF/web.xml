@@ -32,4 +32,12 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LocalitaServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.LocalitaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocalitaServlet</servlet-name>
+    <url-pattern>/LocalitaServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
