@@ -10,9 +10,10 @@
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a href="UserServlet?mode=userlist">Users</a>
-  <a class="active"  href="LocalitaServlet?mode=localitalist">Località</a>
+ <a href="homeadmin.jsp">Home</a>
+  <a  href="ReviewServlet?mode=reviewlist">Users</a>
+  <a href="ReviewServlet?mode=reviewlist">Review</a>
+  <a class="active" href="LocalitaServlet?mode=localitalist">Località</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
