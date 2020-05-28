@@ -11,8 +11,12 @@
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="TipologiaServlet?mode=tipolist">Users</a>
+ <a href="homeadmin.jsp">Home</a>
+  <a href="UserServlet?mode=userlist">Users</a>
+  <a href="ReviewServlet?mode=reviewlist">Review</a>
+  <a href="LocalitaServlet?mode=localitalist">Località</a>
+  <a class="active" href="TipologiaServlet?mode=tipolist">Tipologia</a>
+  <a href="EsercizioServlet?mode=userlist">Esercizio</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>

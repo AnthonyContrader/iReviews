@@ -10,10 +10,12 @@
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a  href="UserServlet?mode=userlist">Users</a>
-  <a  class="active" class="active" href="ReviewServlet?mode=reviewlist">Review</a>
-  <a  href="LocalitaServlet?mode=localitalist">Località</a>
+ <a href="homeadmin.jsp">Home</a>
+  <a href="UserServlet?mode=userlist">Users</a>
+  <a class="active" href="ReviewServlet?mode=reviewlist">Review</a>
+  <a href="LocalitaServlet?mode=localitalist">Località</a>
+  <a href="TipologiaServlet?mode=tipolist">Tipologia</a>
+  <a href="EsercizioServlet?mode=userlist">Esercizio</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
@@ -24,17 +26,36 @@
 	<form id="floatleft" action="ReviewServlet?mode=update&id=<%=u.getId()%>" method="post">
   <div class="row">
     
+    <div class="col-25">
+      <label for="review">Voto</label>
+    </div>
     <div class="col-75">
       <input type="text" id="voto" name="voto" value=<%=u.getVoto()%>>
+    </div>
+    
+    <div class="col-25">
+      <label for="review">User Id</label>
     </div>
     <div class="col-75">
       <input type="text" id="user_id" name="user_id" value=<%=u.getUser_id()%>>
     </div>
+    
+    <div class="col-25">
+      <label for="review">Id Esercizio</label>
+    </div>
     <div class="col-75">
       <input type="text" id="id_esercizio" name="id_esercizio" value=<%=u.getId_esercizio()%>>
     </div>
+    
+    <div class="col-25">
+      <label for="review">Testo</label>
+    </div>
     <div class="col-75">
       <input type="text" id="testo" name="testo" value=<%=u.getTesto()%>>
+    </div>
+    
+    <div class="col-25">
+      <label for="review">Titolo</label>
     </div>
     <div class="col-75">
       <input type="text" id="titolo" name="titolo" value=<%=u.getTitolo()%>>

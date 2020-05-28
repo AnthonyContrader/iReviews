@@ -49,5 +49,25 @@
   <servlet-mapping>
     <servlet-name>ReviewServlet</servlet-name>
     <url-pattern>/ReviewServlet</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>  
+  <servlet>
+    <description></description>
+    <display-name>EsercizioServlet</display-name>
+    <servlet-name>EsercizioServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.EsercizioServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EsercizioServlet</servlet-name>
+    <url-pattern>/EsercizioServlet</url-pattern>
+  </servlet-mapping>  
+   <servlet>
+    <description></description>
+    <display-name>TipologiaServlet</display-name>
+    <servlet-name>TipologiaServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.TipologiaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TipologiaServlet</servlet-name>
+    <url-pattern>/TipologiaServlet</url-pattern>
+  </servlet-mapping>  
 </web-app>

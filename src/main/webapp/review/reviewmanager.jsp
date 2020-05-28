@@ -16,6 +16,8 @@
   <a href="UserServlet?mode=userlist">Users</a>
   <a class="active" href="ReviewServlet?mode=reviewlist">Review</a>
   <a href="LocalitaServlet?mode=localitalist">Località</a>
+  <a  href="TipologiaServlet?mode=tipologialist">Tipologia</a>
+  <a  href="EsercizioServlet?mode=eserciziolist">Esercizio</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">
@@ -59,17 +61,37 @@
 	
 	<form id="floatright" action="ReviewServlet?mode=insert" method="post">
   <div class="row">   
+  
+   <div class="col-25">
+      <label for="review">Voto</label>
+    </div>    
     <div class="col-75">
       <input type="text" id="voto" name="voto" placeholder="inserisci voto">
+    </div>
+    
+     <div class="col-25">
+      <label for="review">User Id</label>
     </div>
      <div class="col-75">
       <input type="text" id="user_id" name="user_id" placeholder="inserisci user_id">
     </div>
+    
+     <div class="col-25">
+      <label for="review">Id Esercizio</label>
+    </div>
      <div class="col-75">
       <input type="text" id="id_esercizio" name="id_esercizio" placeholder="inserisci id_esercizio">
     </div>
+    
+     <div class="col-25">
+      <label for="review">Testo</label>
+    </div>
      <div class="col-75">
       <input type="text" id="testo" name="testo" placeholder="testo">
+    </div>
+    
+     <div class="col-25">
+      <label for="review">Titolo</label>
     </div>
      <div class="col-75">
       <input type="text" id="titolo" name="titolo" placeholder="inserisci titolo">
