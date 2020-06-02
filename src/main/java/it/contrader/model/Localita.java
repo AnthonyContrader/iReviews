@@ -9,33 +9,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "localita")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Entity
-public class User {
-
-	public enum Usertype {
-		ADMIN, USER
-	}
-
+public class Localita {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(unique = true)
-	private String username;
+	@Column(name = "citta")
+	private String citta;
 
-	private String password;
+	@Column(name = "provincia")
+	private String provincia;
 
-	private Usertype usertype;
+	@Column(name = "stato")
+	private String stato;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private List<Review>listreview;
+	@OneToMany(mappedBy = "localita", cascade = CascadeType.ALL)
+	private List<Esercizio>listesercizio;
+	
+	
 
 }
