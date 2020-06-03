@@ -6,7 +6,7 @@ import it.contrader.dto.TipologiaDTO;
 import it.contrader.model.Tipologia;
 
 @Component
-public class TipologiaConveter extends AbstractConverter<Tipologia, TipologiaDTO> {
+public class TipologiaConverter extends AbstractConverter<Tipologia, TipologiaDTO> {
 
 	@Override
 	public Tipologia toEntity(TipologiaDTO tipologiaDTO) {
