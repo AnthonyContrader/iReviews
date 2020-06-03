@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import it.contrader.dto.EsercizioDTO;
 import it.contrader.model.Esercizio;
 @Component
-public class EsercizioConveter extends AbstractConverter<Esercizio, EsercizioDTO> {
+public class EsercizioConverter extends AbstractConverter<Esercizio, EsercizioDTO> {
 
 	@Override
 	public Esercizio toEntity(EsercizioDTO esercizioDTO) {
