@@ -16,8 +16,9 @@
 <%@ include file="./css/header.jsp" %>
 <div class="navbar">
   <a href="/homeadmin.jsp">Home</a> 
-		<a class="active" href="/user/getall">Users</a>
+		<a href="/user/getall">Users</a>
 		<a class="active" href="/tipologia/getall">Tipologia</a>
+		<a href=/localita/getall>Località</a>
 		<a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
@@ -36,12 +37,8 @@
     </div>
     <input type="hidden" name="id" value=<%=u.getId() %>>
       </div>  
-  
-
       <button type="submit" >Edit</button>
 </form>
-
-	
 </div>
 <br>
 <%@ include file="./css/footer.jsp" %>	

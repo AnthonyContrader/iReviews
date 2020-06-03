@@ -6,7 +6,7 @@ import it.contrader.dto.LocalitaDTO;
 import it.contrader.model.Localita;
 
 @Component
-public class LocalitaConveter extends AbstractConverter<Localita, LocalitaDTO> {
+public class LocalitaConverter extends AbstractConverter<Localita, LocalitaDTO> {
 
 	@Override
 	public Localita toEntity(LocalitaDTO localitaDTO) {

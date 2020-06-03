@@ -16,7 +16,8 @@
 	<div class="navbar">
 			<a href="/homeadmin.jsp">Home</a> 
 		<a class="active" href="/user/getall">Users</a>
-		<a class="active" href="/tipologia/getall">Tipologia</a>
+		<a href="/tipologia/getall">Tipologia</a>
+		<a href=/localita/getall>Località</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
