@@ -19,9 +19,13 @@
 <body>
 <%@ include file="./css/header.jsp" %>
 <div class="navbar">
-  <a href="/homeadmin.jsp">Home</a>
-  <a class="active" href="/user/getall">Users</a>
-  <a href="/user/logout" id="logout">Logout</a>
+ 	<a  href="/homeadmin.jsp">Home</a> 
+	<a href="/user/getall">Users</a>
+	<a href="/esercizio/getall">Esercizio</a>
+	<a class="active" href="/review/getall">Review</a>
+	<a href="/tipologia/getall">Tipologia</a>
+	<a href="/localita/getall">Località</a>
+	<a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
 <div class="main">
@@ -30,19 +34,24 @@ ReviewDTO u = (ReviewDTO) request.getSession().getAttribute("dto");
 List<UserDTO> listUser = (List<UserDTO>) request.getSession().getAttribute("listUser");
 List<EsercizioDTO> listEsercizio = (List<EsercizioDTO>) request.getSession().getAttribute("listEsercizio");
  %>
-<form id="floatright" action="/review/update" method="post">
-<div class="col-75">
+<form id="floatleft" action="/review/update" method="post">
+<div class="row">
+			<div class="col-25">
+				<label for="username">Username</label>
+			</div>
+		<div class="col-75">
  				<select id="user" name="user" required>
- 					<option value="" disabled selected>Select il tuo urername</option>
+ 					<option value="" disabled selected>Seleziona il tuo username</option>
  					<% 			
 						for (UserDTO c : listUser) {
 							%> <option value="<%=c.getId()%>"><%=c.getUsername()%></option> <%
 						}%> 
 				</select>
     		</div>
+    	</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="titolo">titolo</label>
+					<label for="titolo">Titolo</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="titolo" name="titolo"
@@ -51,7 +60,7 @@ List<EsercizioDTO> listEsercizio = (List<EsercizioDTO>) request.getSession().get
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="testo">testo</label>
+					<label for="testo">Testo</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="testo" name="testo"
@@ -61,11 +70,11 @@ List<EsercizioDTO> listEsercizio = (List<EsercizioDTO>) request.getSession().get
 			
 			<div class="row">
     		<div class="col-25">
-      			<label for="type">Select esercizio</label>
+      			<label for="type">Esercizio</label>
     		</div>
    		 	<div class="col-75">
  				<select id="esercizio" name="esercizio" required>
- 					<option value="" disabled selected>Select esercizio</option>
+ 					<option value="" disabled selected>Seleziona l'esercizio</option>
  					<% 			
 						for (EsercizioDTO t : listEsercizio) {
 							%> <option value="<%=t.getCodice()%>"><%=t.getNome()%></option> <%
@@ -82,8 +91,8 @@ List<EsercizioDTO> listEsercizio = (List<EsercizioDTO>) request.getSession().get
 						placeholder="inserisci il voto">
 				</div>
 			</div>		
-				<input type="hidden" name="id" value =<%=u.getId() %>>
-			<button type="submit">Insert</button>
+				
+			<button type="submit">Edit</button>
 		</form>
 
 	

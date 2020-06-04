@@ -17,8 +17,13 @@
 	<%@ include file="./css/header.jsp"%>
 
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
+<a  href="/homeadmin.jsp">Home</a> 
+		<a href="/user/getall">Users</a>
+		<a href="/esercizio/getall">Esercizio</a>
+		<a class="active" href="/review/getall">Review</a>
+		<a href="/tipologia/getall">Tipologia</a>
+		<a href="/localita/getall">Località</a>
+		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
 		<%
@@ -32,19 +37,16 @@
 		<br>
 		
 		<table>
-		
-			<thead>
 		 	<tr>
 				<th>User</th>
-				<th>titolo</th>
-				<th>testo</th>
-				<th>esercizio</th>
-				<th>voto</th>
+				<th>Titolo</th>
+				<th>Testo</th>
+				<th>Esercizio</th>
+				<th>Voto</th>
 				<th>
 				<th>
 			</tr>
-			</thead>
-			<tbody>
+	
 			<%
 				for (ReviewDTO c : listRevies) {
 			%>
@@ -55,36 +57,33 @@
 				<td><%=c.getTesto()%></td>
 				<td><%=c.getEsercizio().getNome()%></td>
 				<td><%=c.getVoto()%></td>
-				<td><a href="/review/preupdate?id=<%=c.getId()%>"><input type="button" value="edit"/></a></td>
-				<td><a href="/review/delete?id=<%=c.getId()%>"><input type="button" value="delete"></a></td>
+				<td><a href="/review/preupdate?id=<%=c.getId()%>">Edit</a></td>
+				<td><a href="/review/delete?id=<%=c.getId()%>">Delete</a></td>
 			</tr>
 			<%
 				}
 			%>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</tfoot>
-		</table>
-		<form id="floatright" action="/review/insert" method="post">
+	</table>
+	
+	
+	<form id="floatright" action="/review/insert" method="post">
+		<div class="row">
+			<div class="col-25">
+				<label for="username">Username</label>
+			</div>
 		<div class="col-75">
  				<select id="user" name="user" required>
- 					<option value="" disabled selected>Select il tuo urername</option>
+ 					<option value="" disabled selected>Seleziona il tuo username</option>
  					<% 			
 						for (UserDTO c : listUser) {
 							%> <option value="<%=c.getId()%>"><%=c.getUsername()%></option> <%
 						}%> 
 				</select>
     		</div>
+    	</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="titolo">titolo</label>
+					<label for="titolo">Titolo</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="titolo" name="titolo"
@@ -93,7 +92,7 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="testo">testo</label>
+					<label for="testo">Testo</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="testo" name="testo"
@@ -103,11 +102,11 @@
 			
 			<div class="row">
     		<div class="col-25">
-      			<label for="type">Select esercizio</label>
+      			<label for="type">Esercizio</label>
     		</div>
    		 	<div class="col-75">
  				<select id="esercizio" name="esercizio" required>
- 					<option value="" disabled selected>Select esercizio</option>
+ 					<option value="" disabled selected>Seleziona l'esercizio</option>
  					<% 			
 						for (EsercizioDTO t : listEsercizio) {
 							%> <option value="<%=t.getCodice()%>"><%=t.getNome()%></option> <%
@@ -129,12 +128,6 @@
 		</form>
 	
 	</div>
-	<br>
-	<%@ include file="./css/footer.jsp"%>
-</body>
-</html>
- 				
-  		
 	<br>
 	<%@ include file="./css/footer.jsp"%>
 </body>
