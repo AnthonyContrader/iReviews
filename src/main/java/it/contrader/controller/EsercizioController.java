@@ -17,6 +17,8 @@ import it.contrader.dto.EsercizioDTO;
 import it.contrader.model.Localita;
 import it.contrader.model.Tipologia;
 import it.contrader.service.EsercizioService;
+import it.contrader.service.LocalitaService;
+import it.contrader.service.TipologiaService;
 
 @Controller
 @RequestMapping("/esercizio")
@@ -26,6 +28,12 @@ public class EsercizioController {
 
 		@Autowired
 		private EsercizioService service;
+		
+		@Autowired
+		private LocalitaService serviceLocalita;
+		
+		@Autowired
+		private TipologiaService serviceTipologia;
 
 		
 
@@ -49,8 +57,12 @@ public class EsercizioController {
 		}
 
 		@PostMapping("/update")
-		public String update(HttpServletRequest request, @RequestParam("codice") Long codice, @RequestParam("nome") String nome,
-				@RequestParam("prezzo_medio") Double prezzo_medio, @RequestParam("tipologia") Tipologia tipologia,@RequestParam("indirizzo") String indirizzo,@RequestParam("localita") Localita localita) {
+		public String update(HttpServletRequest request, @RequestParam("codice") Long codice,
+				@RequestParam("nome") String nome,
+				@RequestParam("prezzo_medio") Double prezzo_medio, 
+				@RequestParam("tipologia") Tipologia tipologia,
+				@RequestParam("indirizzo") String indirizzo,
+				@RequestParam("localita") Localita localita) {
 
 			EsercizioDTO dto = new EsercizioDTO();
 			dto.setCodice(codice);
@@ -66,16 +78,20 @@ public class EsercizioController {
 		}
 
 		@PostMapping("/insert")
-		public String insert(HttpServletRequest request, @RequestParam("codice") Long codice, @RequestParam("nome") String nome,
-				@RequestParam("prezzo_medio") Double prezzo_medio, @RequestParam("tipologia") Tipologia tipologia,@RequestParam("indirizzo") String indirizzo,@RequestParam("localita") int id_localita) {
+		public String insert(HttpServletRequest request, 
+				@RequestParam("nome") String nome,
+				@RequestParam("prezzo_medio") Double prezzo_medio, 
+				@RequestParam("tipologia") Tipologia tipologia,
+				@RequestParam("indirizzo") String indirizzo,
+				@RequestParam("localita") Localita localita) {
 
 			EsercizioDTO dto = new EsercizioDTO();
-			dto.setCodice(codice);
+			
 			dto.setNome(nome);
 			dto.setPrezzo_medio(prezzo_medio);
 			dto.setTipologia(tipologia);
 			dto.setIndirizzo(indirizzo);
-			dto.setTipologia(tipologia);;
+			dto.setLocalita(localita);
 			service.update(dto);
 			setAll(request);
 			return "eserciziomanager";
@@ -93,6 +109,8 @@ public class EsercizioController {
 
 		private void setAll(HttpServletRequest request) {
 			request.getSession().setAttribute("list", service.getAll());
+			request.getSession().setAttribute("listLocalita", serviceLocalita.getAll());
+			request.getSession().setAttribute("listTipologia", serviceTipologia.getAll());
 		}
 
 }
