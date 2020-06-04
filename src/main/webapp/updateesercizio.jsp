@@ -5,45 +5,43 @@
 	import="it.contrader.dto.TipologiaDTO"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Localita Edit page">
+<meta name="author" content="Daniele Leonardi">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Edit Esercizio</title>
 </head>
+
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
- <a href="homeadmin.jsp">Home</a>
-<a href="/user/getall">Users</a>
-  <a href="/review/getall">Review</a>
-  <a  href="/localita/getall">Località</a>
-  <a class="active" href="/tipologia/getall">Tipologia</a>
-  <a  href="/esercizio/getall">Esercizio</a>  
+  <a href="homeadmin.jsp">Home</a>
+  <a href="/user/getall">Users</a>
+  <a href="/esercizio/getall">Esercizio</a> 
+  <a class="active" href="/review/getall">Review</a>
+  <a href="/localita/getall">Località</a>
+  <a href="/tipologia/getall">Tipologia</a> 
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
 <div class="main">
 
-<%EsercizioDTO e= (EsercizioDTO) request.getAttribute("dto");
-         
-	    List<LocalitaDTO> listloc = (List<LocalitaDTO>) request.getSession().getAttribute("listLocalita");
-	    List<TipologiaDTO> listtip = (List<TipologiaDTO>) request.getSession().getAttribute("listTipologia");
-	    %>
+<%
+	EsercizioDTO e = (EsercizioDTO) request.getSession().getAttribute("dto");         
+	List<LocalitaDTO> listloc = (List<LocalitaDTO>) request.getSession().getAttribute("listLocalita");
+	List<TipologiaDTO> listtip = (List<TipologiaDTO>) request.getSession().getAttribute("listTipologia");
+%>
 
 <form id="floatleft" action="/esercizio/update" method="post">
-
-<div class="row">
-    <div class="col-25">
-      <label for="cod">Codice</label>
-    </div>
-      <input  type="hidden"  name="codice" value=<%=e.getCodice()%>>
-  </div>
   <div class="row">
     <div class="col-25">
      <label for="name">Nome</label>
     </div>
     <div class="col-75">
-      <input type="text" id="name" name="nome" placeholder="inserisci nome del'esercizio"> 
+      <input type="text" id="name" name="nome" value=<%=e.getNome()%>> 
     </div>
   </div>
   <div class="row">
@@ -51,7 +49,7 @@
       <label for="med-price">Prezzo Medio</label>
     </div>
    		 <div class="col-75">
- 			<input type="text" id="med-price" name="prezzo_medio" placeholder="inserisci prezzo medio"> 
+ 			<input type="text" id="med-price" name="prezzo_medio" value=<%=e.getPrezzo_medio()%>> 
     	</div>
   </div>
   <div class="row">
@@ -59,15 +57,15 @@
       <label for="tipologia">Id Tipologia</label>
     </div>
    		 <div class="col-75">
- 			<!-- input type="text" id="id_type" name="id_tipologia" placeholder="inserisci id della tipologia di esercizio" -->
  			<select id="tipologia" name="tipologia">
  			<option value="" disabled selected>Select Tipologia</option>
  		<%
  			for (TipologiaDTO t : listtip) {
- 				
- 				%> 
- 				<option value="<%=t.getId()%>">   <%=t.getTipologia()%>        </option> <%
- 				 }%>
+ 		 %> 
+ 				<option value="<%=t.getId()%>">   <%=t.getTipologia()%>        </option> 
+ 				<%
+ 				 }
+ 				 %>
  		</select>
     	</div>
   </div>
@@ -76,7 +74,7 @@
       <label for="address">Indirizzo</label>
     </div>
    		 <div class="col-75">
- 			<input type="text" id="address" name="indirizzo" placeholder="inserisci l'indirizzo dell'esercizio"> 
+ 			<input type="text" id="address" name="indirizzo" value=<%=e.getIndirizzo()%>> 
     	</div>
   </div>
    <div class="row">
@@ -89,14 +87,15 @@
  			<option value="" disabled selected>Select Città</option>
  		<%
  			for (LocalitaDTO t : listloc) {
-					%> <option value="<%=t.getId()%>">   <%=t.getCitta()%>        </option> <%
- 				 }%>
- 		</select>
- 		
+		 %> 
+			<option value="<%=t.getId()%>"><%=t.getCitta()%></option>
+		<%
+ 		    }
+ 		 %>
+ 		</select> 		
     	</div>
-   
-  </div>
-          
+   		<input  type="hidden"  name="codice" value=<%=e.getCodice()%>>
+  </div>          
       <button type="submit" >Edit</button>
 </form>
 

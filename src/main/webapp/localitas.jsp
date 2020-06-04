@@ -56,8 +56,6 @@
 			%>
 		</table>
 
-
-
 		<form id="floatright" action="/localita/insert" method="post">
 			<div class="row">
 				<div class="col-25">

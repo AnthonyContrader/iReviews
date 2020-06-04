@@ -13,7 +13,7 @@
 <meta name="description" content="User Edit page">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Edit User</title>
+<title>Edit Review</title>
 
 </head>
 <body>
@@ -91,7 +91,7 @@ List<EsercizioDTO> listEsercizio = (List<EsercizioDTO>) request.getSession().get
 						placeholder="inserisci il voto">
 				</div>
 			</div>		
-				
+				 <input type="hidden" name="id" value=<%=u.getId()%>>
 			<button type="submit">Edit</button>
 		</form>
 

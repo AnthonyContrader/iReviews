@@ -8,7 +8,8 @@
 </head>
 <body>
 
-	<div class="header">SAMPLE Project</div>
+<div class="header"	><img alt="iReviews" src="https://i.ibb.co/K5Gd2nQ/i-Reviews-150px-Tavola-disegno-1-copia-4.png">
+</div>
 
 </body>
 </html>

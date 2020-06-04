@@ -1,12 +1,11 @@
 <%@page import="it.contrader.model.User"%>
 <%@page import="it.contrader.dto.EsercizioDTO"%>
 <%@page import="it.contrader.dto.ReviewDTO"%>
-<%@ page import="it.contrader.dto.UserDTO" import="java.util.*"%>
+<%@page import="it.contrader.dto.UserDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="User Management">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">

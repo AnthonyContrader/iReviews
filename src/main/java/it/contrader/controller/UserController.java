@@ -35,6 +35,12 @@ public class UserController {
 		case USER:
 			return "index";
 
+		case RECENSORE:
+			return "homeadmin";
+		
+		case ESERCENTE:
+			return "homeadmin";
+			
 		default:
 			return "index";
 		}

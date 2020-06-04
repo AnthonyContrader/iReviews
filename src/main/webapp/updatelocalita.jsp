@@ -2,16 +2,16 @@
     pageEncoding="ISO-8859-1" import="it.contrader.dto.LocalitaDTO"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Localita Edit page">
 <meta name="author" content="Daniele Leonardi">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Edit Località</title>
-
 </head>
+
 <body>
 <%@ include file="./css/header.jsp" %>
 <div class="navbar">

@@ -3,10 +3,12 @@
 	import="it.contrader.dto.EsercizioDTO"
 	import="it.contrader.dto.LocalitaDTO"
 	import="it.contrader.dto.TipologiaDTO"%>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="User Management">
+<meta name="author" content="Vittorio Valent">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Esercizio Manager</title>
 </head>
@@ -14,12 +16,12 @@
 <%@ include file="../css/header.jsp" %>
 
 <div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
- <a href="/user/getall">Users</a>
+  <a href="/homeadmin.jsp">Home</a>
+  <a href="/user/getall">Users</a>
+  <a class="active" href="/esercizio/getall">Esercizio</a>  
   <a href="/review/getall">Review</a>
-  <a  href="/localita/getall">Località</a>
-  <a  href="/tipologia/getall">Tipologia</a>
-  <a  class="active" href="/esercizio/getall">Esercizio</a>    
+  <a href="/localita/getall">Località</a>
+  <a href="/tipologia/getall">Tipologia</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <div class="main">
@@ -73,7 +75,8 @@
      <label for="name">Nome</label>
     </div>
     <div class="col-75">
-      <input type="text" id="name" name="nome" placeholder="inserisci nome del'esercizio"> 
+      <input type="text" id="name" name="nome" 
+      placeholder="inserisci nome del'esercizio"> 
     </div>
   </div>
   <div class="row">
@@ -81,7 +84,8 @@
       <label for="med-price">Prezzo Medio</label>
     </div>
    		 <div class="col-75">
- 			<input type="text" id="med-price" name="prezzo_medio" placeholder="inserisci prezzo medio"> 
+ 			<input type="text" id="med-price" name="prezzo_medio" 
+ 			placeholder="inserisci prezzo medio"> 
     	</div>
   </div>
   <div class="row">
@@ -89,14 +93,13 @@
       <label for="tipologia">Id Tipologia</label>
     </div>
    		 <div class="col-75">
- 			<!-- input type="text" id="id_type" name="id_tipologia" placeholder="inserisci id della tipologia di esercizio" -->
  			<select id="tipologia" name="tipologia">
  			<option value="" disabled selected>Select Tipologia</option>
  		<%
  			for (TipologiaDTO t : listtip) {
  				
  				%> 
- 				<option value="<%=t.getId()%>">   <%=t.getTipologia()%>        </option> <%
+ 				<option value="<%=t.getId()%>"><%=t.getTipologia()%></option> <%
  				 }%>
  		</select>
     	</div>
@@ -119,7 +122,7 @@
  			<option value="" disabled selected>Select Città</option>
  		<%
  			for (LocalitaDTO t : listloc) {
-					%> <option value="<%=t.getId()%>">   <%=t.getCitta()%>        </option> <%
+					%> <option value="<%=t.getId()%>"><%=t.getCitta()%></option> <%
  				 }%>
  		</select>
     	</div>
