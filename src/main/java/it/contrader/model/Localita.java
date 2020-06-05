@@ -34,7 +34,7 @@ public class Localita {
 	@Column(name = "stato")
 	private String stato;
 	
-	@OneToMany(mappedBy = "localita", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "localita", cascade = CascadeType.MERGE)
 	private List<Esercizio>listesercizio;
 	
 	

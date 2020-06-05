@@ -35,7 +35,7 @@ public class User {
 
 	private Usertype usertype;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.MERGE)
 	private List<Review>listreview;
 
 }

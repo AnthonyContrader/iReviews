@@ -34,7 +34,7 @@ public class Tipologia implements Serializable{
 	@Column(name = "tipologia")
 	private String tipologia;
 	
-	@OneToMany(mappedBy = "tipologia",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "tipologia",fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	List<Esercizio>listEsercizio;
 
 }

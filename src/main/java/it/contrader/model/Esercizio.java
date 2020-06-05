@@ -41,14 +41,14 @@ public class Esercizio implements Serializable {
 	@Column(name = "prezzo_medio")
 	private Double prezzo_medio;
 	
-	@OneToMany(mappedBy = "esercizio", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "esercizio", cascade = CascadeType.MERGE)
 	List<Review>listReviews;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "id_citta", referencedColumnName = "id")
 	private Localita localita;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "id_tipologia", referencedColumnName = "id")
 	private Tipologia tipologia;
 	
