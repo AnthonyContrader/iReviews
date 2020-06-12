@@ -5,6 +5,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { AuthGuard } from '../../guard/auth/auth.guard';
+import { EsercizioComponent } from './esercizio/esercizio.component';
+import { TipologiaComponent } from './tipologia/tipologia.component';
+import { LocalitaComponent } from './localita/localita.component';
+import { ReviewComponent } from './review/review.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -24,6 +28,10 @@ const routes: Routes = [
     path: 'admin-dashboard', component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
       { path: '', component: AdminDashboardComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'esercizio', component: EsercizioComponent },
+      { path: 'tipologia', component: TipologiaComponent },
+      { path: 'localita', component: LocalitaComponent },
+      { path: 'review', component: ReviewComponent },
       { path: 'work-in-progress', component: WorkInProgressComponent }
     ]
   }

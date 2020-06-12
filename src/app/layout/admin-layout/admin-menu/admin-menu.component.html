@@ -25,6 +25,46 @@ custom e sono definite nel CSS-->
             </a>
         </button>
     </div>
+    <button class="menubtn" (click)="tipologiacollapse()">
+        <i class="fas fa-users"></i>Tipologia
+    </button>
+    <div *ngIf="isTipologiaCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/tipologia']">
+                <i class="fas fa-edit"></i> Manage Tipologia
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="localitacollapse()">
+        <i class="fas fa-users"></i>Localita
+    </button>
+    <div *ngIf="isLocalitaCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/localita']">
+                <i class="fas fa-edit"></i> Manage Localita
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="eserciziocollapse()">
+        <i class="fas fa-users"></i>Esercizio
+    </button>
+    <div *ngIf="isEsercizioCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/esercizio']">
+                <i class="fas fa-edit"></i> Manage Esercizi
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="reviewcollapse()">
+        <i class="fas fa-users"></i>Review
+    </button>
+    <div *ngIf="isReviewCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/review']">
+                <i class="fas fa-edit"></i> Manage Reviews
+            </a>
+        </button>
+    </div>
     <button class="menubtn" (click)="userscollapse()">
         <i class="fas fa-users"></i>Users
     </button>

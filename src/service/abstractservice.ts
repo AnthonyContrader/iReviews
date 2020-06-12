@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export abstract class AbstractService<DTO> implements Service<DTO> {
 
     type: string;
-    port: string = '8080';
+    port: string = '8081';
 
     constructor(protected http: HttpClient) {
     }

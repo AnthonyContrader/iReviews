@@ -17,6 +17,10 @@ export class AdminMenuComponent implements OnInit {
 
   isUserCollapsed = false;
   isAccountCollapsed = false;
+  isTipologiaCollapsed=false;
+  isReviewCollapsed=false;
+  isEsercizioCollapsed=false;
+  isLocalitaCollapsed=false;
 
   constructor(private router: Router) {
   }
@@ -27,6 +31,24 @@ export class AdminMenuComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('');
+  }
+
+  tipologiacollapse(){
+
+    this.isTipologiaCollapsed= !this.isTipologiaCollapsed;
+  }
+  localitacollapse(){
+
+    this.isLocalitaCollapsed= !this.isLocalitaCollapsed;
+  }
+  eserciziocollapse(){
+
+    this.isEsercizioCollapsed= !this.isEsercizioCollapsed;
+  }
+
+  reviewcollapse(){
+
+    this.isReviewCollapsed= !this.isReviewCollapsed;
   }
 
   userscollapse() {

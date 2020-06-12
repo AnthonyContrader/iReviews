@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/service/user.service';
 import { UserDTO } from 'src/dto/userdto';
 import { AbstractCrudComponent } from 'src/app/utils/abstractcomponent';
@@ -19,6 +19,7 @@ import { AbstractCrudComponent } from 'src/app/utils/abstractcomponent';
 })
 export class UsersComponent extends AbstractCrudComponent<UserDTO> implements OnInit {
 
+  @Input()dto:UserDTO
   constructor(service: UserService) {
     super(service);
   }
@@ -31,6 +32,8 @@ export class UsersComponent extends AbstractCrudComponent<UserDTO> implements On
   clear() {
     this.dto = new UserDTO();
   }
+
+  
 
   close() {
     this.selected = null;

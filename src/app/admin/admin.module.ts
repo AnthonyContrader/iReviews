@@ -6,6 +6,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { TipologiaComponent } from './tipologia/tipologia.component';
+import { EsercizioComponent } from './esercizio/esercizio.component';
+import { LocalitaComponent } from './localita/localita.component';
+import { ReviewComponent } from './review/review.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -16,7 +20,7 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, UserDetailsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, UserDetailsComponent, TipologiaComponent, EsercizioComponent, LocalitaComponent, ReviewComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
