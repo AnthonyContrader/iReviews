@@ -1,10 +1,10 @@
 #header {
-  background-color: darkorange;
+  background-color: #3685C9;
   height: 8vh;
 }
 
 .searchContainer {
-  margin-top: 10px;
+  margin-top: 25px;
   display: inline-block;
   width: 100%;
   height: auto;
@@ -50,5 +50,5 @@ p {
 }
 
 i:hover {
-  background-color: crimson;
+  background-color: #8BC2F3;
 }

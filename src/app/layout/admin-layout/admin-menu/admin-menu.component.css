@@ -35,6 +35,6 @@ a {
 
 button:focus, button:hover, a:hover {
     background-color: #334247;
-    color: darkorange;
+    color: #FFCC01;
     border: none !important;
 }

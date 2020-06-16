@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <table>
         <tr>
-          <th>
+          <th style="border-top-left-radius: 12px">
             user
           </th>
           <th>
@@ -21,11 +21,8 @@
           <th>
             edit
           </th>
-          <th>
+          <th style="border-top-right-radius: 12px">
             delete
-          </th>
-          <th>
-            Details
           </th>
         </tr>
         <tr>
@@ -55,9 +52,6 @@
               <td>
                 <button (click)="clear()"><i class="fas fa-times"></i>Clear</button>
               </td>
-              <td>
-                <button (click)="close()">Close Details</button>
-              </td>
             </tr>
             <tr *ngFor="let review of reviews">
               <td>
@@ -82,9 +76,22 @@
                 <td>
                   <button (click)="delete(review.id)"><i class="fas fa-trash"></i>Delete</button>
                 </td>
-                <td>
-                  <button (click)="select(review)"><i class="fas fa-binoculars"></i>Details</button>
-                </td>
+            </tr>
+            <tr>
+              <th style="border-bottom-left-radius: 12px">
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th style="border-bottom-right-radius: 12px">
+              </th>
             </tr>
           </table>
         </div>
