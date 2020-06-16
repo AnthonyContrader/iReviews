@@ -33,7 +33,7 @@ img {
 input, input:hover, input::selection, input:checked, input:focus {
     border: 0;
     background-color: #bddcf8;
-    border-radius: 0;
+    border-radius: 6px;
     color: #424242;
     border-bottom: 1px solid #1361A4;
     margin: 0px;
@@ -65,7 +65,6 @@ input::placeholder {
     border-radius: 6px;
     border: none;
     background-color: #bddcf8;
-    color: white;
     border-bottom: 1px solid white;
     box-align: center;
 }

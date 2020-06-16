@@ -5,7 +5,7 @@ custom e sono definite nel CSS-->
     <button class="menubtn">
         <!-- Per navigare tra le component usiamo il routerLink, specificando il persorso da seguire-->
         <a [routerLink]="['/admin-dashboard']">
-            <i class="fas fa-home"></i> Dashboard
+            <i class="fas fa-home"></i>Dashboard
         </a>
     </button>
     <!-- quando si clicca sul bottone la variabile "isAccountCollapsed" cambia valore booleano-->
@@ -26,7 +26,7 @@ custom e sono definite nel CSS-->
         </button>
     </div>
     <button class="menubtn" (click)="tipologiacollapse()">
-        <i class="fas fa-users"></i>Tipologia
+        <i class="fas fa-shapes"></i>Tipologia
     </button>
     <div *ngIf="isTipologiaCollapsed">
         <button class="collapsebtn">
@@ -36,7 +36,7 @@ custom e sono definite nel CSS-->
         </button>
     </div>
     <button class="menubtn" (click)="localitacollapse()">
-        <i class="fas fa-users"></i>Localita
+        <i class="fas fa-compass"></i>Localita
     </button>
     <div *ngIf="isLocalitaCollapsed">
         <button class="collapsebtn">
@@ -46,7 +46,7 @@ custom e sono definite nel CSS-->
         </button>
     </div>
     <button class="menubtn" (click)="eserciziocollapse()">
-        <i class="fas fa-users"></i>Esercizio
+        <i class="fas fa-shopping-cart"></i>Esercizio
     </button>
     <div *ngIf="isEsercizioCollapsed">
         <button class="collapsebtn">
@@ -56,7 +56,7 @@ custom e sono definite nel CSS-->
         </button>
     </div>
     <button class="menubtn" (click)="reviewcollapse()">
-        <i class="fas fa-users"></i>Review
+        <i class="fas fa-comment-dots"></i>Review
     </button>
     <div *ngIf="isReviewCollapsed">
         <button class="collapsebtn">
