@@ -1,0 +1,26 @@
+<!-- Il grid layout di Bootstrap prevede che il contentuto sia inserito dentro un div di classe 
+  "container", poi le row e infine le col (in tutto devono essere ESATTAMENTE 12 colonne per 
+  ogni riga) -->
+  
+<div class="elementocentrale">
+  <div class="row">
+    <div class="col" style="padding-left: 10%;">
+      <img src="../../assets/iReviews.svg" alt="logo">
+      <form style="text-align:center" #f="ngForm">
+        <p>Please insert username and password to Login or Sign Up</p>
+        <div class="d-flex flex-row justify-content-center align-items-center" style="margin-bottom: 8px">
+          <input class="form-control text-center" type="text" id="user" name="username" placeholder="Username" ngModel>
+        </div>
+        <div class="d-flex flex-row justify-content-center align-items-center" style="margin-bottom: 8px">
+          <input class="form-control text-center" type="password" id="pass" name="password" placeholder="Password" ngModel>
+        </div>
+        <!-- "(click)"" è un tipo di binding unidirezionale (dal template al ts): quando l'utente clicca
+        sul bottone viene eseguito il metodo login(f) del ts. f non è altro che la form con tutti i valori
+      inseriti (verranno poi spacchettati dal ts) -->
+      <div style="text-align:center">
+      <button class="loginbutton" type="submit" (click)="login(f)">Login</button>
+      <button class="loginbutton" type="submit" (click)="signup(f)">Sign Up</button>
+      </div>
+      </form>
+    </div>
+  </div>

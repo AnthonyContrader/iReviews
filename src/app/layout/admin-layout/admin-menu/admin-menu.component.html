@@ -1,0 +1,81 @@
+<!-- Questo template, essendo un monoblocco, non ha bisogno del grid layout. Le classi di stile sono 
+custom e sono definite nel CSS-->
+
+<div class="menu">
+    <button class="menubtn">
+        <!-- Per navigare tra le component usiamo il routerLink, specificando il persorso da seguire-->
+        <a [routerLink]="['/admin-dashboard']">
+            <i class="fas fa-home"></i>Dashboard
+        </a>
+    </button>
+    <!-- quando si clicca sul bottone la variabile "isAccountCollapsed" cambia valore booleano-->
+    <button class="menubtn" (click)="accountcollapse()">
+        <i class="fas fa-user"></i> Account
+    </button>
+    <!-- La direttiva *ngIf mostra il contenuto del div solo se "isAccountCollapsed" è true -->
+    <div *ngIf="isAccountCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/work-in-progress']">
+                <i class="fas fa-user-edit"></i> Edit Profile
+            </a>
+        </button>
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/work-in-progress']">
+                <i class="fas fa-file-alt"></i>General Info
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="tipologiacollapse()">
+        <i class="fas fa-shapes"></i>Tipologia
+    </button>
+    <div *ngIf="isTipologiaCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/tipologia']">
+                <i class="fas fa-edit"></i> Manage Tipologia
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="localitacollapse()">
+        <i class="fas fa-compass"></i>Localita
+    </button>
+    <div *ngIf="isLocalitaCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/localita']">
+                <i class="fas fa-edit"></i> Manage Localita
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="eserciziocollapse()">
+        <i class="fas fa-shopping-cart"></i>Esercizio
+    </button>
+    <div *ngIf="isEsercizioCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/esercizio']">
+                <i class="fas fa-edit"></i> Manage Esercizi
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="reviewcollapse()">
+        <i class="fas fa-comment-dots"></i>Review
+    </button>
+    <div *ngIf="isReviewCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/review']">
+                <i class="fas fa-edit"></i> Manage Reviews
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="userscollapse()">
+        <i class="fas fa-users"></i>Users
+    </button>
+    <div *ngIf="isUserCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/users']">
+                <i class="fas fa-edit"></i> Manage Users
+            </a>
+        </button>
+    </div>
+    <button class="menubtn" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>Logout
+    </button>
+</div>

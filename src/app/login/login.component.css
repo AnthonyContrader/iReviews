@@ -1,0 +1,111 @@
+form {
+    align-content: center;
+    position: center;
+    margin-top: 6%;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: auto;
+    width: 45%;
+    border-radius: 0;
+    border-color: #ffffff;
+}
+
+.loginform{
+    align-content: center;
+    position: center;
+    margin-top: 6%;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: auto;
+    width: 45%;
+
+}
+
+img {
+    position: center;
+    margin-top: 12%;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 1%;
+    width: 45%;
+}
+
+input, input:hover, input::selection, input:checked, input:focus {
+    border: 0;
+    background-color: #bddcf8;
+    border-radius: 6px;
+    color: #424242;
+    border-bottom: 1px solid #1361A4;
+    margin: 0px;
+}
+
+.container-fluid {
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;   
+    background-color: #ffffff;
+}
+
+.elementocentrale {
+    margin-left: 19%;
+    height: 100vh;
+    width: 80%;
+    position: center;
+    background-color: #ffffff;
+}
+
+input::placeholder {
+    color: #424242;
+}
+
+.form-control {
+    
+    width: 55%;
+    min-width: 25%;
+    border-radius: 6px;
+    border: none;
+    background-color: #bddcf8;
+    border-bottom: 1px solid white;
+    box-align: center;
+}
+
+.loginform {
+    border: none;
+    background-color: #bddcf8;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.login {
+    border: none;
+    background-color: #bddcf8;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-right: auto;
+    padding-bottom: 10px;
+    padding-left: auto;
+}
+
+p {
+    font-size: 14px;
+    color: #000000;
+}
+
+.loginbutton {
+    background-color: #1361A4; 
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 8px 8%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.loginbutton:hover {
+    background-color: #59A8EE;
+}

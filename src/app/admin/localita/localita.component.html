@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <table>
+        <tr>
+          <th style="border-top-left-radius: 12px">
+            Citta
+          </th>
+          <th>
+            Provincia
+          </th>
+          <th>
+            Stato
+          </th>
+          <th>
+            Insert
+          </th>
+          <th style="border-top-right-radius: 12px">
+            Delete
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <!-- con il binding bidirezionale [(ngModel)] mentre scriviamo nell'input
+            viene modificato l'attributo di dto in tempo reale-->
+            <input placeholder="citta" [(ngModel)]="dto.citta">
+          </td>
+          <td>
+            <input placeholder="provincia" [(ngModel)]="dto.provincia">
+          </td>
+          <td>
+            <input placeholder="stato" [(ngModel)]="dto.stato">
+          </td>
+          <td>
+            <button (click)="insert(dto)"><i class="fas fa-plus"></i>Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()"><i class="fas fa-times"></i>Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let dto of dtolist">
+          <td>
+            <input [(ngModel)]="dto.citta">
+          </td>
+          <td>
+            <input [(ngModel)]="dto.provincia">
+          </td>
+          <td>
+            <input [(ngModel)]="dto.stato">
+          </td>
+          <td>
+            <button (click)=update(dto)><i class="fas fa-edit"></i>Edit</button>
+          </td>
+          <td>
+            <button (click)="delete(dto.id)"><i class="fas fa-trash"></i>Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <th style="border-bottom-left-radius: 12px">
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th style="border-bottom-right-radius: 12px">
+          </th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-1">
+      <!-- colonna vuota per centrare i dettagli-->
+    </div>
+    <div class="col-md-10">
+      <!-- Se "selected" non è nullo, viene passato il suo valore sotto la chiave dto alla compoment
+        figlia. Questo è un esempio di binding unidirezionale tra ts e ts-->
+      <app-user-details *ngIf="selected" [dto]="selected"></app-user-details>
+    </div>
+    <div class="col-md-1">
+      <!-- colonna vuota per centrare i dettagli-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <table>
+        <tr>
+          <th style="border-top-left-radius: 12px">
+            user
+          </th>
+          <th>
+            titolo
+          </th>
+          <th>
+            testo
+          </th>
+          <th>
+            esercizio
+          </th>
+          <th>
+            voto
+          </th>
+          <th>
+            edit
+          </th>
+          <th style="border-top-right-radius: 12px">
+            delete
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <select [(ngModel)]="reviewInsert.user">
+              <option *ngFor="let user of users" [ngValue]="user" >{{user.username}}</option>
+            </select>
+            </td>
+            <td>
+
+              <input placeholder="titolo" [(ngModel)]="reviewInsert.titolo">
+            </td>
+            <td>
+              <input  placeholder="testo" [(ngModel)]="reviewInsert.testo">
+            </td>
+            <td>
+              <select [(ngModel)]="reviewInsert.esercizio">
+                <option *ngFor="let esercizio of esercizi" [ngValue]="esercizio" >{{esercizio.nome}}</option>
+              </select>
+              </td>
+              <td>
+                <input  placeholder="voto" [(ngModel)]="reviewInsert.voto">
+              </td>
+              <td>
+                <button (click)="insert(reviewInsert)"><i class="fas fa-plus"></i>Insert</button>
+              </td>
+              <td>
+                <button (click)="clear()"><i class="fas fa-times"></i>Clear</button>
+              </td>
+            </tr>
+            <tr *ngFor="let review of reviews">
+              <td>
+                <label >{{review.user.username}}</label>
+               </td>
+               <td>
+                <input [(ngModel)]="review.titolo">
+              </td>
+              <td>
+                <input [(ngModel)]="review.testo">
+              </td>
+              <td>
+                <select [(ngModel)]="review.esercizio.codice">
+                  <option *ngFor="let esercizio of esercizi" [ngValue]="esercizio.codice">{{esercizio.nome}}</option>
+                </select>
+                <td>
+                  <input [(ngModel)]="review.voto">
+                </td>
+                <td>
+                  <button (click)=update(review)><i class="fas fa-edit"></i>Edit</button>
+                </td>
+                <td>
+                  <button (click)="delete(review.id)"><i class="fas fa-trash"></i>Delete</button>
+                </td>
+            </tr>
+            <tr>
+              <th style="border-bottom-left-radius: 12px">
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th style="border-bottom-right-radius: 12px">
+              </th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-1">
+        </div>
+        </div>
+        </div>
