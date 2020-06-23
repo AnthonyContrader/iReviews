@@ -12,7 +12,7 @@ export class LocalitaService extends AbstractService<LocalitaDTO> {
   constructor(http: HttpClient) {
     super(http);
     this.nome='customer';
-    this.type = 'localita';
+    this.type = 'localitas';
     this.port='8081';
   }
 

@@ -4,38 +4,54 @@ import { UserDTO } from 'src/dto/userdto';
 import { AbstractCrudComponent } from 'src/app/utils/abstractcomponent';
 
 /**
- * Come ogni componente di CRUD, questa estende la classe AbstractCrudComponent, ereditando tutti i metodi 
+ * Come ogni componente di CRUD, questa estende la classe AbstractCrudComponent, ereditando tutti i metodi
  * per le CRUD. Questo ci permette di non riscrivere ogni volta gli stessi metodi e avere meno errori.
- * 
+ *
  * @author Vittorio Valent
- * 
+ *
  * @see AbstractCrudComponent
- * 
+ *
  */
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent extends AbstractCrudComponent<UserDTO> implements OnInit {
+export class UsersComponent  implements OnInit {
+  users: UserDTO[];
+  usertoinsert: UserDTO = new UserDTO();
 
-  @Input()dto:UserDTO
-  constructor(service: UserService) {
-    super(service);
+  constructor(private service: UserService) {
+
   }
 
   ngOnInit() {
-    this.clear();
-    this.getAll();
+    this.getUsers();;
   }
 
-  clear() {
-    this.dto = new UserDTO();
+  getUsers() {
+    this.service.getAll().subscribe(users => this.users = users);
   }
 
-  
+  delete(user: UserDTO) {
+    this.service.delete(user.id).subscribe(() => this.getUsers());
+  }
 
-  close() {
-    this.selected = null;
+  deleteU(user: UserDTO) {
+    this.service.deleteU(user.login).subscribe(() => this.getUsers());
+  }
+
+
+  update(user: UserDTO) {
+    this.service.update(user).subscribe(() => this.getUsers());
+  }
+
+  insert(user: UserDTO) {
+    console.log(user)
+    this.service.insert(user).subscribe(() => this.getUsers());
+  }
+
+  clear(){
+    this.usertoinsert = new UserDTO();
   }
 }

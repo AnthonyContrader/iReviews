@@ -12,7 +12,7 @@ export class TipologiaService extends AbstractService<TipologiaDTO>{
   constructor(http: HttpClient) {
     super(http);
     this.nome='customer';
-    this.type = 'tipologia';
+    this.type = 'tipologias';
     this.port='8081';
   }
 

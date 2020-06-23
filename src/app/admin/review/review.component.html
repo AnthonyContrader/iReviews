@@ -26,11 +26,7 @@
           </th>
         </tr>
         <tr>
-          <td>
-            <select [(ngModel)]="reviewInsert.user">
-              <option *ngFor="let user of users" [ngValue]="user" >{{user.username}}</option>
-            </select>
-            </td>
+
             <td>
 
               <input placeholder="titolo" [(ngModel)]="reviewInsert.titolo">
@@ -54,9 +50,7 @@
               </td>
             </tr>
             <tr *ngFor="let review of reviews">
-              <td>
-                <label >{{review.user.username}}</label>
-               </td>
+
                <td>
                 <input [(ngModel)]="review.titolo">
               </td>

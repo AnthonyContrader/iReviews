@@ -12,7 +12,7 @@ export class ReviewService extends AbstractService<ReviewDTO> {
   constructor(http: HttpClient) {
     super(http);
     this.nome='customer';
-    this.type = 'review';
+    this.type = 'reviews';
     this.port='8081';
   }
 

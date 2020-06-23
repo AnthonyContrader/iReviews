@@ -13,7 +13,7 @@ import { UserDTO } from 'src/dto/userdto';
 export class LoginComponent implements OnInit {
 
   loginDTO: LoginDTO;
- 
+
 
   constructor(private service: UserService, private router: Router) { }
 
@@ -29,16 +29,17 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("currentUser", JSON.stringify({ "authorities": token.id_token }));
       this.service.userLogged(this.loginDTO.username).subscribe((user:UserDTO)=>{
 
-      if (user != null) {
-        localStorage.setItem('AUTOKEN', JSON.stringify(user));
-        console.log(user.authorities);
-        if(user.authorities == "ROLE_ADMIN" ) {
+        if (user != null) {
+          localStorage.setItem('AUTOKEN', JSON.stringify(user));
+          console.log(user.authorities);
+          if(user.authorities == "ROLE_ADMIN" ) {
+            console.log("sono entrato nel if di authorities"+ user.authorities);
+            this.router.navigate(['/admin-dashboard']);
+          }
+        if(user.authorities == "ROLE_USER") {
           this.router.navigate(['/admin-dashboard']);
         }
-        if(user.authorities == "ROLE_USER") {
-          this.router.navigate(['/user-dashboard']);
-        }
-        
+
       }else{
           alert("Wrong username or password");
         }

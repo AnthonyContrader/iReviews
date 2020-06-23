@@ -12,7 +12,7 @@ export class EsercizioService extends AbstractService<EsercizioDTO>{
   constructor(http: HttpClient) {
     super(http);
     this.nome='customer';
-    this.type = 'esercizio';
+    this.type = 'esercizios';
     this.port='8081';
   }
 
@@ -26,7 +26,7 @@ export class EsercizioService extends AbstractService<EsercizioDTO>{
       return '';
     }
   }
- 
+
   userLogged(username: string) {
     // console.log('qua: ', this.auth());
      console.log(this.auth());
