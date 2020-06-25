@@ -6,26 +6,33 @@ import { TipologiaDTO } from './tipologiadto';
 
 /**
  * Classe DTO di User. DEVE essere uguale (stesso nome classe, stessi attributi e stessi nomi) a
- * quello nel backend. 
- * 
- * 
- * 
- * 
+ * quello nel backend.
+ *
+ *
+ *
+ *
  */
 export class EsercizioDTO {
 
-     codice: number;
-    
+     id: number;
+
      nome:string ;
-	
+
 	 indirizzo: string;
-	
-	 prezzo_medio: number;
-	
-	//listReviews: Array<ReviewDTO>;
-	
-	 localita: LocalitaDTO;
-	
-	 tipologia: TipologiaDTO;
+
+	 prezzoMedio: number;
+
+	 localitaId: number
+
+   localita: LocalitaDTO;
+
+    tipologiaId: number;
+
+   tipologia: TipologiaDTO;
+
+   localitaCitta: String;
+
+   tipologiaTipologia: string;
+
 
 }

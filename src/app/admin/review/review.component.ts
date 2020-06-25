@@ -21,9 +21,9 @@ export class ReviewComponent  implements OnInit {
   reviews: ReviewDTO[];
   selected: ReviewDTO;
 
-  constructor( private service: ReviewService,private userService: UserService, 
+  constructor( private service: ReviewService,//private //userService: //UserService,
     private esercizioService: EsercizioService) {
-    
+
   }
 
 
@@ -35,12 +35,12 @@ export class ReviewComponent  implements OnInit {
     this.getUsers();
   }
   getUsers() {
-    this.userService.getAll().subscribe(users=>this.users=users);
+    this.service.userLogged
   }
   getEsercizi() {
     this.esercizioService.getAll().subscribe(esercizi=>this.esercizi=esercizi);
   }
-  
+
 
   clear() {
     this.reviewInsert = new ReviewDTO();
@@ -51,7 +51,7 @@ export class ReviewComponent  implements OnInit {
   }
 
   getAll() {
-    this.userService.getAll().subscribe(users=>this.users=users);
+    //this.userService.getAll().subscribe(users=>this.users=users);
     this.esercizioService.getAll().subscribe(esercizi=>this.esercizi=esercizi);
     this.service.getAll().subscribe(reviews=>this.reviews=reviews);
   }

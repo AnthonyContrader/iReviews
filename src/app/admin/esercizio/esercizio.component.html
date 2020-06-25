@@ -35,16 +35,16 @@
             <input placeholder="indirizzo" [(ngModel)]="esercizioInsert.indirizzo">
           </td>
           <td>
-            <input placeholder="prezzo_medio" [(ngModel)]="esercizioInsert.prezzo_medio">
+            <input placeholder="prezzo_medio" [(ngModel)]="esercizioInsert.prezzoMedio">
           </td>
           <td>
-          <select [(ngModel)]="esercizioInsert.localita">
-            <option *ngFor="let localita of localitas" [ngValue]="localita" >{{localita.citta}}</option>
+          <select [(ngModel)]="esercizioInsert.localitaId">
+            <option *ngFor="let localita of localitas" [ngValue]="localita.id" >{{localita.citta}}</option>
           </select>
         </td>
         <td>
-          <select [(ngModel)]="esercizioInsert.tipologia">
-            <option *ngFor="let tipologia of tipologie" [ngValue]="tipologia" >{{tipologia.tipologia}}</option>
+          <select [(ngModel)]="esercizioInsert.tipologiaId">
+            <option *ngFor="let tipologia of tipologie" [ngValue]="tipologia.id" >{{tipologia.tipologia}}</option>
           </select>
         </td>
           <td>
@@ -62,15 +62,15 @@
             <input [(ngModel)]="esercizio.indirizzo">
           </td>
           <td>
-            <input [(ngModel)]="esercizio.prezzo_medio">
+            <input [(ngModel)]="esercizio.prezzoMedio">
           </td>
           <td>
-          <select [(ngModel)]="esercizio.localita.id">
+          <select [(ngModel)]="esercizio.localitaId">
             <option *ngFor="let localita of localitas" [ngValue]="localita.id" >{{localita.citta}}</option>
           </select>
         </td>
         <td>
-          <select [(ngModel)]="esercizio.tipologia.id">
+          <select [(ngModel)]="esercizio.tipologiaId">
             <option *ngFor="let tipologia of tipologie" [ngValue]="tipologia.id" >{{tipologia.tipologia}}</option>
           </select>
         </td>
@@ -80,7 +80,7 @@
           <td>
             <button (click)="delete(esercizio.id)"><i class="fas fa-trash"></i>Delete</button>
           </td>
-          
+
         </tr>
         <tr>
           <th style="border-bottom-left-radius: 12px">

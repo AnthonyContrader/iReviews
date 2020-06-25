@@ -14,17 +14,17 @@ import { LocalitaService } from 'src/service/localita.service';
 })
 export class EsercizioComponent  implements OnInit {
 
-  
-  
+
+
  localitas: LocalitaDTO[];
  tipologie: TipologiaDTO[];
  esercizioInsert: EsercizioDTO= new EsercizioDTO();
  esercizi: EsercizioDTO[];
  selected: EsercizioDTO;
 
-  constructor( private service: EsercizioService,private tipologiaService: TipologiaService, 
+  constructor( private service: EsercizioService,private tipologiaService: TipologiaService,
     private localitaService: LocalitaService) {
-    
+
   }
 
 
@@ -41,7 +41,7 @@ export class EsercizioComponent  implements OnInit {
   getLocalita() {
     this.localitaService.getAll().subscribe(localitas=>this.localitas=localitas);
   }
-  
+
 
   clear() {
     this.esercizioInsert = new EsercizioDTO();
@@ -52,9 +52,10 @@ export class EsercizioComponent  implements OnInit {
   }
 
   getAll() {
-    this.localitaService.getAll().subscribe(localitas=>this.localitas=localitas);
-    this.tipologiaService.getAll().subscribe(tipologie=>this.tipologie=tipologie);
     this.service.getAll().subscribe(esercizi=>this.esercizi=esercizi);
+
+
+
   }
 
   delete(id: number) {

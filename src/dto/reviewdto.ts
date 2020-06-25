@@ -16,7 +16,10 @@ testo: string;
 
 voto: number;
 
+esercizioId: number;
+
 
  esercizio: EsercizioDTO;
 
+ esercizioNome: string;
 }
