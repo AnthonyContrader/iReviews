@@ -5,24 +5,36 @@ form {
     margin-left: 12%;
     margin-right: 12%;
     margin-bottom: auto;
-    width: 45%;
+    width: 45vh;
     border-radius: 0;
     border-color: #ffffff;
 }
-
-.loginform{
-    align-content: center;
-    position: center;
-    margin-top: 6%;
-    margin-left: 12%;
-    margin-right: 12%;
-    margin-bottom: auto;
-    width: 45%;
-
+.login-box{
+    text-align: center;
+    width: 80vh;
+    height: 80vh;
+    background: rgba(255, 255, 255);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
 }
 
+.loginform {
+    position: relative;
+    top: 45vh;
+    display: inline-block;
+
+    
+}
+
+
 img {
-    position: center;
+
     margin-top: 12%;
     margin-left: 12%;
     margin-right: 12%;
@@ -46,12 +58,11 @@ input, input:hover, input::selection, input:checked, input:focus {
     background-color: #ffffff;
 }
 
-.elementocentrale {
-    margin-left: 19%;
-    height: 100vh;
-    width: 80%;
-    position: center;
-    background-color: #ffffff;
+.background {
+    height: 100%;
+    width: 100%;
+    background: #1890ff;
+    background: linear-gradient(135deg, #1890ff 30%, #6b5695 100%);
 }
 
 input::placeholder {
@@ -59,9 +70,8 @@ input::placeholder {
 }
 
 .form-control {
-    
-    width: 55%;
-    min-width: 25%;
+    width: 35vh;
+    min-width: 30vh;
     border-radius: 6px;
     border: none;
     background-color: #bddcf8;
@@ -69,12 +79,7 @@ input::placeholder {
     box-align: center;
 }
 
-.loginform {
-    border: none;
-    background-color: #bddcf8;
-    color: white;
-    border-bottom: 1px solid white;
-}
+
 
 .login {
     border: none;
@@ -94,7 +99,8 @@ p {
 }
 
 .loginbutton {
-    background-color: #1361A4; 
+    background: #1890ff;
+    background: linear-gradient(135deg, #1890ff 30%, #6b5695 100%);; 
     border: none;
     border-radius: 6px;
     color: white;
@@ -107,5 +113,5 @@ p {
 }
 
 .loginbutton:hover {
-    background-color: #59A8EE;
+    background: #59A8EE;
 }
