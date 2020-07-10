@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Project1.Infrastructure;
+using Project1.Repository;
 using System;
 using System.Text;
 
@@ -25,10 +26,15 @@ namespace Project1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<LocalitaRepository, LocalitaRepository>();
+            services.AddTransient<TipologiaRepository, TipologiaRepository>();
+            services.AddTransient<EsercizioRepository, EsercizioRepository>();
+            services.AddTransient<ReviewRepository, ReviewRepository>();
+            services.AddTransient<UserRepository, UserRepository>();
 
             services.AddDbContext<Project1Context>(options =>
             {
-                options.UseSqlServer(@"Server=sqldata;Database=Project1Demo;User ID=sa;Password=Contrader2020;MultipleActiveResultSets=true",
+                options.UseSqlServer(Configuration.GetConnectionString("IReviews"),
                 sqlServerOptionsAction: sqlOptions =>
                 {
                     /*sqlOptions.MigrationsAssembly(

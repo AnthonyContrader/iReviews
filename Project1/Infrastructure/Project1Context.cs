@@ -21,7 +21,7 @@ namespace Project1.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\;Database=Project1Demo;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Data Source = DESKTOP-NJBNRVD\\SQLEXPRESS; Initial Catalog = IRieviewsDB;Integrated Security = True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,7 +40,7 @@ namespace Project1.Infrastructure
                 entity.Property(e => e.Email).HasMaxLength(50);
                 entity.Property(e => e.Address).HasMaxLength(200);
                 entity.Property(e => e.IsAdmin).HasDefaultValue(false);
-                entity.HasMany(c => c.Reviews).WithOne(e => e.User).HasForeignKey(e => e.UserId).OnDelete(DeleteBehavior.SetNull);
+                entity.HasMany(c => c.Reviews).WithOne(e => e.User).HasForeignKey(e => e.UserId);
             });
 
             modelBuilder.Entity<Localita>(entity =>
@@ -50,7 +50,7 @@ namespace Project1.Infrastructure
                 entity.Property(e => e.Citta).HasMaxLength(50).IsRequired();
                 entity.Property(e => e.Provincia).HasMaxLength(50).IsRequired();
                 entity.Property(e => e.Stato).HasMaxLength(50).IsRequired();
-                entity.HasMany(l => l.EserciziPerLocalita).WithOne(e => e.Localita).HasForeignKey(e => e.LocalitaId).OnDelete(DeleteBehavior.SetNull);
+                entity.HasMany(l => l.EserciziPerLocalita).WithOne(e => e.Localita).HasForeignKey(e => e.LocalitaId);
             });
 
             modelBuilder.Entity<Tipologia>(entity =>
@@ -58,7 +58,7 @@ namespace Project1.Infrastructure
                 entity.ToTable("Tipologia");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.NomeTipologia).HasMaxLength(50).IsRequired();
-                entity.HasMany(d => d.EserciziPerTipologia).WithOne(e => e.Tipologia).HasForeignKey(e => e.TipologiaId).OnDelete(DeleteBehavior.SetNull);
+                entity.HasMany(d => d.EserciziPerTipologia).WithOne(e => e.Tipologia).HasForeignKey(e => e.TipologiaId);
             });
 
             modelBuilder.Entity<Esercizio>(entity =>
@@ -68,7 +68,7 @@ namespace Project1.Infrastructure
                 entity.Property(e => e.Nome).HasMaxLength(50).IsRequired();
                 entity.Property(e => e.Indirizzo).HasMaxLength(150).IsRequired();
                 entity.Property(e => e.PrezzoMedio).IsRequired();
-                entity.HasMany(r => r.Reviews).WithOne(e => e.Esercizio).HasForeignKey(e => e.EsercizioId).OnDelete(DeleteBehavior.SetNull);
+                entity.HasMany(r => r.Reviews).WithOne(e => e.Esercizio).HasForeignKey(e => e.EsercizioId);
 
 
             });

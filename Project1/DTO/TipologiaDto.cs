@@ -29,6 +29,11 @@ namespace Project1.DTO
 				
 			};
 		}
-	}
+
+        internal static TipologiaDto ConvertFrom(object tipologia)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 
