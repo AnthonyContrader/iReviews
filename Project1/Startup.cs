@@ -34,7 +34,7 @@ namespace Project1
 
             services.AddDbContext<Project1Context>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("IReviews"),
+                options.UseSqlServer(@"Server=sqldata;Database=Project1Demo;User ID=sa;Password=Contrader2020;MultipleActiveResultSets=true",
                 sqlServerOptionsAction: sqlOptions =>
                 {
                     /*sqlOptions.MigrationsAssembly(

@@ -21,7 +21,19 @@ namespace Project1.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source = DESKTOP-NJBNRVD\\SQLEXPRESS; Initial Catalog = IRieviewsDB;Integrated Security = True");
+            optionsBuilder.UseSqlServer(@"Server=sqldata;Database=Project1Demo;User ID=sa;Password=Contrader2020;MultipleActiveResultSets=true",
+          sqlServerOptionsAction: sqlOptions =>
+          {
+                    /*sqlOptions.MigrationsAssembly(
+                        typeof(Startup).GetTypeInfo().Assembly.GetName().Name);*/
+
+                    //Configuring Connection Resiliency:
+                    sqlOptions.
+                  EnableRetryOnFailure(maxRetryCount: 5,
+                  maxRetryDelay: TimeSpan.FromSeconds(30),
+                  errorNumbersToAdd: null);
+
+          });
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
