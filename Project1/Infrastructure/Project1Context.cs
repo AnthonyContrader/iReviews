@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Project1.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Project1.Infrastructure
 {
@@ -24,14 +21,14 @@ namespace Project1.Infrastructure
             optionsBuilder.UseSqlServer(@"Server=sqldata;Database=Project1Demo;User ID=sa;Password=Contrader2020;MultipleActiveResultSets=true",
           sqlServerOptionsAction: sqlOptions =>
           {
-                    /*sqlOptions.MigrationsAssembly(
-                        typeof(Startup).GetTypeInfo().Assembly.GetName().Name);*/
+              /*sqlOptions.MigrationsAssembly(
+                  typeof(Startup).GetTypeInfo().Assembly.GetName().Name);*/
 
-                    //Configuring Connection Resiliency:
-                    sqlOptions.
-                  EnableRetryOnFailure(maxRetryCount: 5,
-                  maxRetryDelay: TimeSpan.FromSeconds(30),
-                  errorNumbersToAdd: null);
+              //Configuring Connection Resiliency:
+              sqlOptions.
+            EnableRetryOnFailure(maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(30),
+            errorNumbersToAdd: null);
 
           });
         }

@@ -5,12 +5,8 @@ using Shared.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Project1WPF.ViewModel
@@ -78,7 +74,7 @@ namespace Project1WPF.ViewModel
             LoginCommand = new RelayCommand(OnLogin);
         }
         #endregion
-      
+
         #region methods
 
         private async void OnLogin(object obj)
@@ -126,7 +122,7 @@ namespace Project1WPF.ViewModel
                     users = await service.SeedUsers(10);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 NotifyMessage(ex.Message);
             }

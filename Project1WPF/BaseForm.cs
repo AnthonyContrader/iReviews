@@ -1,10 +1,5 @@
 ﻿using Project1WPF.Delegate;
 using Project1WPF.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Project1WPF

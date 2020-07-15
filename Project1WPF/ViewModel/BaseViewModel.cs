@@ -1,10 +1,5 @@
 ﻿using Project1WPF.Delegate;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1WPF.ViewModel
 {
@@ -14,7 +9,7 @@ namespace Project1WPF.ViewModel
 
         private bool _isValid = true;
 
-        public bool IsValid 
+        public bool IsValid
         {
             get { return _isValid; }
             set { _isValid = value; OnPropertyChange(nameof(IsValid)); }
@@ -22,7 +17,7 @@ namespace Project1WPF.ViewModel
 
         public BaseViewModel()
         {
-            
+
         }
 
         public string ValidationMessage { get; set; }

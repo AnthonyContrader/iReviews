@@ -1,16 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Project1.DTO;
 using Project1.Infrastructure;
 using Project1.Model;
 using Project1.Repository;
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 
 namespace Project1.Controllers
 {
@@ -34,7 +30,7 @@ namespace Project1.Controllers
             UserItem userItem = userDto.ConvertTo();
             UserRepository userRepository = new UserRepository(_context);
             userItem = userRepository.Insert(userItem);
-            return UserDto.ConvertFrom(userItem);           
+            return UserDto.ConvertFrom(userItem);
         }
 
         //[Authorize(Roles ="Admin")]

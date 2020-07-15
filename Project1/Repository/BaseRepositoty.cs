@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Project1.Model;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Project1.Repository
 {
@@ -11,7 +8,7 @@ namespace Project1.Repository
     {
         private readonly DbContext _context;
 
-        public BaseRepositoty(DbContext context) 
+        public BaseRepositoty(DbContext context)
         {
             _context = context;
         }

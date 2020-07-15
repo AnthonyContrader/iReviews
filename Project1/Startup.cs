@@ -52,7 +52,7 @@ namespace Project1
             services
                 .AddControllers()
                 .AddNewtonsoftJson();
-           
+
             //for token
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

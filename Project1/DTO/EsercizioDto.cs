@@ -1,14 +1,10 @@
 ﻿using Project1.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Project1.DTO
 {
-	public class EsercizioDto
-	{
-		public int? Id { get; set; }
+    public class EsercizioDto
+    {
+        public int? Id { get; set; }
         public string Nome { get; set; }
         public string Indirizzo { get; set; }
         public double PrezzoMedio { get; set; }

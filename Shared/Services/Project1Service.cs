@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Project2.IServices;
 using Shared.Model;
-using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -16,7 +15,7 @@ namespace Shared.Services
     public class Project1Service : IProject1Service
     {
         private readonly HttpClient _httpClient;
-    
+
         public Project1Service(HttpClient httpClient)
         {
             _httpClient = httpClient;

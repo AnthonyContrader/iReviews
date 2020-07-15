@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Project1.DTO;
 using Project1.Infrastructure;
 using Project1.Model;
 using Project1.Repository;
+using System.Collections.Generic;
+using System.Net.Http;
 
 namespace Project1.Controllers
 {
@@ -81,6 +78,6 @@ namespace Project1.Controllers
             return userDto;
         }*/
 
-    } 
+    }
 }
 

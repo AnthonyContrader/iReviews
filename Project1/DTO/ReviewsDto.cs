@@ -1,14 +1,10 @@
 ﻿using Project1.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Project1.DTO
 {
-	public class ReviewsDto
-	{
-		public int? Id { get; set; }
+    public class ReviewsDto
+    {
+        public int? Id { get; set; }
         public string Titolo { get; set; }
         public string Testo { get; set; }
         public int Voto { get; set; }
