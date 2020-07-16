@@ -4,16 +4,16 @@ services:
     project1:
         image: ${DOCKER_REGISTRY-}project1
         build:
-          context: .
-          dockerfile: Project1/Dockerfile
+          context: Project1
+          dockerfile: Dockerfile
         depends_on:
             - sqldata
 
     project2:
         image: ${DOCKER_REGISTRY-}project2
         build:
-          context: .
-          dockerfile: Project2/Dockerfile
+          context: Project2
+          dockerfile: Dockerfile
         depends_on:
             - sqldata
             - project1

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.version: 1.19.0 (f63a961c)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: project1
+  name: project1
+spec:
+  selector:
+    matchLabels:
+      io.kompose.service: project1
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.version: 1.19.0 (f63a961c)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: project1
+    spec:
+      containers:
+      - image: project1:latest
+        name: project1
+        ports:
+        - containerPort: 80
+        resources: {}
+        imagePullPolicy: Never
+      restartPolicy: Always
+status: {}

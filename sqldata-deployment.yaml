@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.version: 1.19.0 (f63a961c)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: sqldata
+  name: sqldata
+spec:
+  selector:
+    matchLabels:
+      io.kompose.service: sqldata
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.version: 1.19.0 (f63a961c)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sqldata
+    spec:
+      containers:
+      - env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          value: Contrader2020
+        image: microsoft/mssql-server-linux
+        name: sqldata
+        ports:
+        - containerPort: 1433
+        resources: {}
+      restartPolicy: Always
+status: {}
