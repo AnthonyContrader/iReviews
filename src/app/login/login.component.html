@@ -1,0 +1,21 @@
+<body>
+  <div class="background">
+      <div class="login-box" style="background-image: url(../../../../assets/iReviews-background.svg); background-size: contain; background-repeat: no-repeat;">
+        <form  class="loginform" #f="ngForm">
+          <p>Please insert username and password to Login</p>
+          <div class="d-flex flex-row justify-content-center align-items-center" style="margin-bottom: 8px">
+            <input class="form-control text-center" type="text" id="login" name="login" placeholder="Username" ngModel>
+          </div>
+          <div class="d-flex flex-row justify-content-center align-items-center" style="margin-bottom: 8px">
+            <input class="form-control text-center" type="password" id="pass" name="password" placeholder="Password" ngModel>
+          </div>
+          <!-- "(click)"" è un tipo di binding unidirezionale (dal template al ts): quando l'utente clicca
+          sul bottone viene eseguito il metodo login(f) del ts. f non è altro che la form con tutti i valori
+        inseriti (verranno poi spacchettati dal ts) -->
+        <div style="text-align:center">
+        <button class="loginbutton" type="submit" (click)="login(f)">Login</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </body>

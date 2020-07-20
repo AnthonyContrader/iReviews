@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <table>
+        <tr>
+          <th style="border-top-left-radius: 12px">
+            Nome
+          </th>
+          <th>
+            Indirizzo
+          </th>
+          <th>
+            Prezzo Medio
+          </th>
+          <th>
+            Localita
+          </th>
+          <th>
+            Tipologia
+          </th>
+          <th>
+            Edit
+          </th>
+          <th style="border-top-right-radius: 12px">
+            Delete
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <!-- con il binding bidirezionale [(ngModel)] mentre scriviamo nell'input
+            viene modificato l'attributo di dto in tempo reale-->
+            <input placeholder="nome" [(ngModel)]="esercizioInsert.nome">
+          </td>
+          <td>
+            <input placeholder="indirizzo" [(ngModel)]="esercizioInsert.indirizzo">
+          </td>
+          <td>
+            <input placeholder="prezzo_medio" [(ngModel)]="esercizioInsert.prezzo_medio">
+          </td>
+          <td>
+          <select [(ngModel)]="esercizioInsert.localita">
+            <option *ngFor="let localita of localitas" [ngValue]="localita" >{{localita.citta}}</option>
+          </select>
+        </td>
+        <td>
+          <select [(ngModel)]="esercizioInsert.tipologia">
+            <option *ngFor="let tipologia of tipologie" [ngValue]="tipologia" >{{tipologia.tipologia}}</option>
+          </select>
+        </td>
+          <td>
+            <button (click)="insert(esercizioInsert)"><i class="fas fa-plus"></i>Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()"><i class="fas fa-times"></i>Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let esercizio of esercizi">
+          <td>
+            <input [(ngModel)]="esercizio.nome">
+          </td>
+          <td>
+            <input [(ngModel)]="esercizio.indirizzo">
+          </td>
+          <td>
+            <input [(ngModel)]="esercizio.prezzo_medio">
+          </td>
+          <td>
+          <select [(ngModel)]="esercizio.localita.id">
+            <option *ngFor="let localita of localitas" [ngValue]="localita.id" >{{localita.citta}}</option>
+          </select>
+        </td>
+        <td>
+          <select [(ngModel)]="esercizio.tipologia.id">
+            <option *ngFor="let tipologia of tipologie" [ngValue]="tipologia.id" >{{tipologia.tipologia}}</option>
+          </select>
+        </td>
+          <td>
+            <button (click)=update(esercizio)><i class="fas fa-edit"></i>Edit</button>
+          </td>
+          <td>
+            <button (click)="delete(esercizio.id)"><i class="fas fa-trash"></i>Delete</button>
+          </td>
+          
+        </tr>
+        <tr>
+          <th style="border-bottom-left-radius: 12px">
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th style="border-bottom-right-radius: 12px">
+          </th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-1">
+      <!-- colonna vuota per centrare i dettagli-->
+    </div>
+    <div class="col-md-10">
+      <!-- Se "selected" non è nullo, viene passato il suo valore sotto la chiave dto alla compoment
+        figlia. Questo è un esempio di binding unidirezionale tra ts e ts-->
+      <app-user-details *ngIf="selected" [dto]="selected"></app-user-details>
+    </div>
+    <div class="col-md-1">
+      <!-- colonna vuota per centrare i dettagli-->
+    </div>
+  </div>
+</div>
